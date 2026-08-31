@@ -468,6 +468,283 @@
   .conf .theme-quote { font-size: 1.02rem; }
   .conf .date { font-size: 1rem; }
 }
+
+.conf .page-hero {
+  background: var(--navy);
+  color: var(--white);
+  padding: 76px 0 68px;
+}
+.conf .page-hero h1 {
+  max-width: 760px;
+  margin: 10px 0 14px;
+}
+.conf .page-hero p {
+  max-width: 700px;
+  color: #e5eaf0;
+  font-size: 1.05rem;
+}
+.conf .registration-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 54px;
+  align-items: start;
+}
+.conf .registration-intro {
+  padding-top: 22px;
+}
+.conf .registration-intro h2 {
+  margin: 10px 0 16px;
+  max-width: 460px;
+}
+.conf .registration-intro > p {
+  max-width: 480px;
+  color: var(--cmuted);
+}
+.conf .registration-facts {
+  display: grid;
+  gap: 15px;
+  margin-top: 32px;
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+}
+.conf .registration-facts div {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 15px;
+}
+.conf .registration-facts strong {
+  color: var(--navy);
+}
+.conf .registration-facts span {
+  color: var(--cmuted);
+  text-align: right;
+}
+.conf .registration-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 34px;
+  box-shadow: var(--shadow);
+}
+.conf .form-heading {
+  margin-bottom: 25px;
+}
+.conf .form-heading h2 {
+  margin: 5px 0;
+}
+.conf .form-heading p,
+.conf .form-note,
+.conf .accommodation-option p {
+  color: var(--cmuted);
+  font-size: 0.88rem;
+}
+.conf .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.conf .field {
+  display: grid;
+  gap: 7px;
+  margin-top: 18px;
+}
+.conf .field-wide {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+.conf .field label,
+.conf .accommodation-option label {
+  color: var(--navy);
+  font-weight: 700;
+}
+.conf .registration-form input,
+.conf .registration-form textarea {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--text);
+  padding: 12px 13px;
+  min-height: 46px;
+  font: inherit;
+}
+.conf .registration-form textarea {
+  resize: vertical;
+  min-height: 104px;
+}
+.conf .registration-form input:focus,
+.conf .registration-form textarea:focus {
+  border-color: var(--gold);
+  outline: 2px solid rgba(200, 155, 60, 0.2);
+}
+.conf .accommodation-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 24px 0 5px;
+  padding: 16px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.conf .accommodation-option button {
+  margin-top: 3px;
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.conf .accommodation-option p {
+  margin-top: 2px;
+}
+.conf .registration-submit {
+  width: 100%;
+  border: 0;
+  margin-top: 24px;
+  cursor: pointer;
+}
+.conf .registration-submit:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+.conf .form-note {
+  margin-top: 12px;
+  text-align: center;
+}
+.conf .form-error {
+  margin-top: 18px;
+  color: #a63d2d;
+  font-size: 0.9rem;
+}
+.conf .registration-success {
+  text-align: center;
+  padding: 22px 8px 12px;
+}
+.conf .success-mark {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+.conf .registration-success h2 {
+  margin: 8px 0;
+}
+.conf .registration-success p {
+  margin: 0 auto 24px;
+  max-width: 440px;
+  color: var(--cmuted);
+}
+.conf .speaker-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.conf .speaker-card {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 20px;
+  align-items: start;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+.conf .speaker-avatar {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #e8c873;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.conf .speaker-card h3 {
+  color: var(--navy);
+  font-size: 1.25rem;
+  margin: 5px 0 7px;
+}
+.conf .speaker-card p {
+  color: var(--cmuted);
+  font-size: 0.94rem;
+}
+.conf .announcement-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 28px;
+  padding: 28px 30px;
+  background: var(--navy);
+  border-radius: 16px;
+  color: var(--white);
+}
+.conf .announcement-band h2 {
+  color: var(--white);
+  font-size: 1.6rem;
+  margin: 5px 0;
+}
+.conf .announcement-band p {
+  color: #d8dee5;
+}
+.conf .announcement-band .btn {
+  flex: none;
+}
+@media (max-width: 800px) {
+  .conf .registration-layout,
+  .conf .speaker-grid {
+    grid-template-columns: 1fr;
+  }
+  .conf .registration-layout {
+    gap: 28px;
+  }
+  .conf .registration-intro {
+    padding-top: 0;
+  }
+  .conf .announcement-band {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .conf .announcement-band .btn {
+    width: auto;
+    margin: 0;
+  }
+}
+@media (max-width: 560px) {
+  .conf .page-hero {
+    padding: 58px 0 50px;
+  }
+  .conf .registration-card {
+    padding: 22px 17px;
+  }
+  .conf .form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .conf .field-wide {
+    grid-column: auto;
+  }
+  .conf .speaker-card {
+    grid-template-columns: 58px 1fr;
+    gap: 14px;
+    padding: 20px;
+  }
+  .conf .speaker-avatar {
+    width: 58px;
+    height: 58px;
+    font-size: 0.9rem;
+  }
+  .conf .announcement-band {
+    padding: 23px 20px;
+  }
+}
 @media (max-width: 560px) {
   .conf .brand { font-size: 0.86rem; gap: 9px; }
   .conf .brand-logo { width: 38px; height: 38px; }

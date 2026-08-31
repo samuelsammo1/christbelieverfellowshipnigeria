@@ -77,11 +77,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Christ Believers Fellowship Conference 2026" },
+      {
+        name: "description",
+        content: "Conference information and registration for Christ Believers Fellowship Conference 2026.",
+      },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Christ Believers Fellowship Conference 2026" },
+      {
+        property: "og:description",
+        content: "Conference information and registration for Christ Believers Fellowship Conference 2026.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
