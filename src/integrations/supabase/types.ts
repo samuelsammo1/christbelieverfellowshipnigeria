@@ -14,7 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      conference_registrations: {
+        Row: {
+          accommodation_needed: boolean
+          church: string | null
+          city: string | null
+          created_at: string
+          dietary_needs: string | null
+          email: string
+          full_name: string
+          id: string
+          notes: string | null
+          phone: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          accommodation_needed?: boolean
+          church?: string | null
+          city?: string | null
+          created_at?: string
+          dietary_needs?: string | null
+          email: string
+          full_name: string
+          id?: string
+          notes?: string | null
+          phone: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          accommodation_needed?: boolean
+          church?: string | null
+          city?: string | null
+          created_at?: string
+          dietary_needs?: string | null
+          email?: string
+          full_name?: string
+          id?: string
+          notes?: string | null
+          phone?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
