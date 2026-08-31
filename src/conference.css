@@ -30,9 +30,7 @@
       width: min(1120px, 92%);
       margin: auto;
     }
-.conf /* ================= NAVIGATION ================= */
-
-    header {
+.conf header {
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -73,9 +71,7 @@
       color: white;
       font-size: 1.7rem;
     }
-.conf /* ================= HERO ================= */
-
-    .hero {
+.conf .hero {
       background:
         linear-gradient(
           135deg,
@@ -133,9 +129,7 @@
       font-size: 1.1rem;
       margin: 18px 0 28px;
     }
-.conf /* ================= BUTTONS ================= */
-
-    .btn {
+.conf .btn {
       display: inline-block;
       padding: 13px 23px;
       border-radius: 8px;
@@ -158,9 +152,7 @@
 .conf .btn-outline:hover {
       background: rgba(255,255,255,0.1);
     }
-.conf /* ================= GENERAL SECTIONS ================= */
-
-    section {
+.conf section {
       padding: 72px 0;
     }
 .conf .section-title {
@@ -180,9 +172,7 @@
       max-width: 720px;
       margin: auto;
     }
-.conf /* ================= THEME ================= */
-
-    .theme-grid {
+.conf .theme-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 28px;
@@ -220,9 +210,7 @@
       color: var(--navy);
       margin-bottom: 5px;
     }
-.conf /* ================= OBJECTIVE ================= */
-
-    .objective {
+.conf .objective {
       max-width: 900px;
       margin: auto;
       text-align: center;
@@ -232,9 +220,7 @@
       padding: 30px;
       box-shadow: var(--shadow);
     }
-.conf /* ================= COUNTDOWN ================= */
-
-    .countdown {
+.conf .countdown {
       background: var(--navy);
       color: white;
     }
@@ -266,9 +252,7 @@
       letter-spacing: 1px;
       color: #d8dee5;
     }
-.conf /* ================= PROGRAMME ================= */
-
-    .programme-wrap {
+.conf .programme-wrap {
       display: grid;
       gap: 25px;
     }
@@ -313,9 +297,7 @@
 .conf td:nth-child(2) {
       font-weight: 600;
     }
-.conf /* ================= PANEL ================= */
-
-    .panel {
+.conf .panel {
       background: var(--cream);
       border: 1px solid var(--line);
       border-radius: 16px;
@@ -341,9 +323,7 @@
       border-radius: 9px;
       border: 1px solid var(--line);
     }
-.conf /* ================= INFO ================= */
-
-    .info-grid {
+.conf .info-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
@@ -364,9 +344,7 @@
       color: var(--navy);
       margin-bottom: 5px;
     }
-.conf /* ================= CTA ================= */
-
-    .cta {
+.conf .cta {
       background: linear-gradient(135deg, #c89b3c, #a87920);
       color: white;
       text-align: center;
@@ -382,9 +360,7 @@
       background: white;
       color: var(--navy);
     }
-.conf /* ================= FOOTER ================= */
-
-    footer {
+.conf footer {
       background: #0b1a2c;
       color: #cfd7df;
       padding: 35px 0;
@@ -397,11 +373,8 @@
       font-size: 0.82rem;
       margin-top: 8px;
     }
-.conf /* ================= MOBILE ================= */
-
-    @media (max-width: 800px) {
-
-      .nav-links {
+@media (max-width: 800px) {
+.conf .nav-links {
         display: none;
         position: absolute;
         top: 70px;
@@ -412,36 +385,29 @@
         flex-direction: column;
         align-items: flex-start;
       }
-
-      .nav-links.show {
+.conf .nav-links.show {
         display: flex;
       }
-
-      .menu {
+.conf .menu {
         display: block;
       }
-
-      .theme-grid,
-      .panel-grid,
-      .info-grid {
+.conf .theme-grid, .conf .panel-grid, .conf .info-grid {
         grid-template-columns: 1fr;
       }
-
-      .timer {
+.conf .timer {
         grid-template-columns: repeat(2, 1fr);
       }
-
-      .btn {
+.conf .btn {
         display: block;
         margin: 10px auto;
         width: min(280px, 90%);
         text-align: center;
       }
-
-      .btn-outline {
+.conf .btn-outline {
         margin: 10px auto;
       }
-    }
+
+}
 @media (max-width: 450px) {
 .conf section {
         padding: 55px 0;
@@ -461,7 +427,8 @@
 
 }
 
-/* ===== extra responsive polish ===== */
+/* extra responsive polish */
+
 .conf .nav-links.show { display: flex; }
 @media (max-width: 1024px) {
   .conf .theme-grid { gap: 20px; }
