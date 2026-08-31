@@ -1,10 +1,10 @@
-:root {
+.conf {
       --navy: #10243e;
       --gold: #c89b3c;
       --cream: #f8f4ea;
       --white: #ffffff;
       --text: #263238;
-      --muted: #68737d;
+      --cmuted: #68737d;
       --line: #e7e1d5;
       --shadow: 0 12px 35px rgba(16, 36, 62, 0.10);
     }
@@ -176,7 +176,7 @@
       margin: 7px 0;
     }
 .conf .section-title p {
-      color: var(--muted);
+      color: var(--cmuted);
       max-width: 720px;
       margin: auto;
     }
@@ -303,7 +303,7 @@
 .conf th {
       font-size: 0.8rem;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--cmuted);
     }
 .conf td:first-child {
       font-weight: 700;
@@ -459,4 +459,28 @@
         font-size: 1.6rem;
       }
 
+}
+
+/* ===== extra responsive polish ===== */
+.conf .nav-links.show { display: flex; }
+@media (max-width: 1024px) {
+  .conf .theme-grid { gap: 20px; }
+}
+@media (max-width: 800px) {
+  .conf .brand { font-size: 0.98rem; }
+  .conf .nav-links .btn { width: auto; margin: 6px 0; }
+  .conf .theme-card,
+  .conf .programme-card,
+  .conf .panel,
+  .conf .info-card,
+  .conf .objective { padding: 22px; }
+  .conf table { min-width: 560px; }
+}
+@media (max-width: 560px) {
+  .conf .programme-card { padding: 16px; }
+  .conf table { min-width: 460px; font-size: 0.88rem; }
+  .conf th, .conf td { padding: 9px 7px; }
+  .conf td:first-child { width: 110px; }
+  .conf .theme-quote { font-size: 1.02rem; }
+  .conf .date { font-size: 1rem; }
 }
