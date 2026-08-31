@@ -1,7 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import "../conference.css";
-import logo from "../assets/cbf-logo.jpeg.asset.json";
+import { ConferenceHeader } from "../components/conference-header";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,7 +25,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const REGISTER_URL = "https://forms.gle/RCy8tkR8YHyUVxuj8";
 // 13 November 2026, 4:30 PM Nigeria time (UTC+1)
 const CONFERENCE_TS = Date.UTC(2026, 10, 13, 15, 30, 0);
 
@@ -111,52 +110,11 @@ function ScheduleTable({ rows }: { rows: Row[] }) {
 }
 
 function Index() {
-  const [open, setOpen] = useState(false);
   const { days, hours, minutes, seconds, started } = useCountdown();
-
-  const close = () => setOpen(false);
 
   return (
     <div className="conf">
-      <header>
-        <div className="container">
-          <nav>
-            <a className="brand" href="#home" onClick={close}>
-              <img src={logo.url} alt="Christ Believers Fellowship logo" className="brand-logo" />
-              <span className="brand-text">
-                Christ Believers Fellowship
-                <span>in conjunction with Free Bible Students</span>
-              </span>
-            </a>
-
-            <button
-              className="menu"
-              onClick={() => setOpen((v) => !v)}
-              aria-label="Open menu"
-              aria-expanded={open}
-            >
-              ☰
-            </button>
-
-            <div className={`nav-links${open ? " show" : ""}`} id="navLinks">
-              <a href="#theme" onClick={close}>Theme</a>
-              <a href="#countdown" onClick={close}>Countdown</a>
-              <a href="#programme" onClick={close}>Programme</a>
-              <a href="#panel" onClick={close}>Panel</a>
-              <a href="#location" onClick={close}>Location</a>
-              <a
-                href={REGISTER_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-gold"
-                onClick={close}
-              >
-                Register
-              </a>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <ConferenceHeader />
 
       <main id="home">
         <section className="hero">
@@ -170,9 +128,9 @@ function Index() {
             <div className="date">
               13–14 November 2026 &nbsp; • &nbsp; Ugehli, Delta State, Nigeria
             </div>
-            <a href={REGISTER_URL} target="_blank" rel="noreferrer" className="btn btn-gold">
+            <Link to="/register" className="btn btn-gold">
               Register for the Conference
-            </a>
+            </Link>
             <a href="#programme" className="btn btn-outline">
               View Programme
             </a>
@@ -380,9 +338,9 @@ function Index() {
               Register today and join believers gathering to worship, learn and grow
               together in Christ.
             </p>
-            <a href={REGISTER_URL} target="_blank" rel="noreferrer" className="btn">
+            <Link to="/register" className="btn">
               Register Now
-            </a>
+            </Link>
           </div>
         </section>
       </main>
