@@ -1,0 +1,453 @@
+.conf {
+      --navy: #10243e;
+      --gold: #c89b3c;
+      --cream: #f8f4ea;
+      --white: #ffffff;
+      --text: #263238;
+      --cmuted: #68737d;
+      --line: #e7e1d5;
+      --shadow: 0 12px 35px rgba(16, 36, 62, 0.10);
+    }
+.conf * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+.conf {
+      scroll-behavior: smooth;
+    }
+.conf {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+    }
+.conf a {
+      text-decoration: none;
+      color: inherit;
+    }
+.conf .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+.conf header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(16, 36, 62, 0.98);
+      color: white;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
+    }
+.conf nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+.conf .brand {
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+.conf .brand span {
+      display: block;
+      color: #e8c873;
+      font-size: 0.76rem;
+      margin-top: -3px;
+    }
+.conf .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      font-size: 0.92rem;
+    }
+.conf .nav-links a:hover {
+      color: #e8c873;
+    }
+.conf .menu {
+      display: none;
+      background: none;
+      border: 0;
+      color: white;
+      font-size: 1.7rem;
+    }
+.conf .hero {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(16, 36, 62, 0.98),
+          rgba(25, 55, 88, 0.94)
+        );
+
+      color: white;
+      text-align: center;
+      padding: 95px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+.conf .hero:before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(232, 200, 115, 0.18);
+      border-radius: 50%;
+      left: -180px;
+      top: -180px;
+    }
+.conf .hero:after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(232, 200, 115, 0.12);
+      border-radius: 50%;
+      right: -260px;
+      bottom: -310px;
+    }
+.conf .eyebrow {
+      color: #e8c873;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+.conf h1 {
+      font-size: clamp(2.3rem, 6vw, 4.7rem);
+      line-height: 1.05;
+      margin: 18px auto;
+      max-width: 950px;
+    }
+.conf .hero p {
+      max-width: 760px;
+      margin: 0 auto 25px;
+      color: #e5eaf0;
+      font-size: 1.05rem;
+    }
+.conf .date {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin: 18px 0 28px;
+    }
+.conf .btn {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 8px;
+      font-weight: 800;
+      transition: 0.2s;
+    }
+.conf .btn-gold {
+      background: var(--gold);
+      color: white;
+    }
+.conf .btn-gold:hover {
+      transform: translateY(-2px);
+      background: #b98b2e;
+    }
+.conf .btn-outline {
+      border: 1px solid rgba(255,255,255,0.45);
+      color: white;
+      margin-left: 8px;
+    }
+.conf .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+    }
+.conf section {
+      padding: 72px 0;
+    }
+.conf .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+.conf .section-title .eyebrow {
+      color: var(--gold);
+    }
+.conf h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--navy);
+      margin: 7px 0;
+    }
+.conf .section-title p {
+      color: var(--cmuted);
+      max-width: 720px;
+      margin: auto;
+    }
+.conf .theme-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+.conf .theme-card {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+.conf .theme-card h3 {
+      color: var(--navy);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+.conf .theme-quote {
+      font-size: 1.15rem;
+      font-style: italic;
+      color: #49545d;
+      margin-bottom: 15px;
+    }
+.conf .scriptures {
+      display: grid;
+      gap: 14px;
+    }
+.conf .scripture {
+      background: white;
+      border-left: 4px solid var(--gold);
+      padding: 16px 18px;
+      border-radius: 8px;
+    }
+.conf .scripture strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+.conf .objective {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+.conf .countdown {
+      background: var(--navy);
+      color: white;
+    }
+.conf .countdown h2 {
+      color: white;
+    }
+.conf .timer {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      max-width: 760px;
+      margin: auto;
+    }
+.conf .time-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 20px 10px;
+      text-align: center;
+    }
+.conf .time-box strong {
+      display: block;
+      font-size: 2rem;
+      color: #e8c873;
+    }
+.conf .time-box span {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #d8dee5;
+    }
+.conf .programme-wrap {
+      display: grid;
+      gap: 25px;
+    }
+.conf .programme-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      overflow-x: auto;
+    }
+.conf .programme-card h3 {
+      color: var(--navy);
+      font-size: 1.4rem;
+      margin-bottom: 5px;
+    }
+.conf .programme-card h4 {
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+.conf table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 650px;
+    }
+.conf th, .conf td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+.conf th {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--cmuted);
+    }
+.conf td:first-child {
+      font-weight: 700;
+      width: 145px;
+      color: var(--navy);
+    }
+.conf td:nth-child(2) {
+      font-weight: 600;
+    }
+.conf .panel {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+.conf .panel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+.conf .panel ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+.conf .questions {
+      display: grid;
+      gap: 10px;
+    }
+.conf .question {
+      background: white;
+      padding: 15px;
+      border-radius: 9px;
+      border: 1px solid var(--line);
+    }
+.conf .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+.conf .info-card {
+      text-align: center;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+.conf .info-card .icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+.conf .info-card h3 {
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+.conf .cta {
+      background: linear-gradient(135deg, #c89b3c, #a87920);
+      color: white;
+      text-align: center;
+    }
+.conf .cta h2 {
+      color: white;
+    }
+.conf .cta p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+    }
+.conf .cta .btn {
+      background: white;
+      color: var(--navy);
+    }
+.conf footer {
+      background: #0b1a2c;
+      color: #cfd7df;
+      padding: 35px 0;
+      text-align: center;
+    }
+.conf footer strong {
+      color: white;
+    }
+.conf .small {
+      font-size: 0.82rem;
+      margin-top: 8px;
+    }
+@media (max-width: 800px) {
+.conf .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--navy);
+        padding: 18px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+.conf .nav-links.show {
+        display: flex;
+      }
+.conf .menu {
+        display: block;
+      }
+.conf .theme-grid, .conf .panel-grid, .conf .info-grid {
+        grid-template-columns: 1fr;
+      }
+.conf .timer {
+        grid-template-columns: repeat(2, 1fr);
+      }
+.conf .btn {
+        display: block;
+        margin: 10px auto;
+        width: min(280px, 90%);
+        text-align: center;
+      }
+.conf .btn-outline {
+        margin: 10px auto;
+      }
+
+}
+@media (max-width: 450px) {
+.conf section {
+        padding: 55px 0;
+      }
+.conf .hero {
+        padding: 72px 0 58px;
+      }
+.conf .timer {
+        gap: 9px;
+      }
+.conf .time-box {
+        padding: 15px 5px;
+      }
+.conf .time-box strong {
+        font-size: 1.6rem;
+      }
+
+}
+
+/* extra responsive polish */
+
+.conf .nav-links.show { display: flex; }
+@media (max-width: 1024px) {
+  .conf .theme-grid { gap: 20px; }
+}
+@media (max-width: 800px) {
+  .conf .brand { font-size: 0.98rem; }
+  .conf .nav-links .btn { width: auto; margin: 6px 0; }
+  .conf .theme-card,
+  .conf .programme-card,
+  .conf .panel,
+  .conf .info-card,
+  .conf .objective { padding: 22px; }
+  .conf table { min-width: 560px; }
+}
+@media (max-width: 560px) {
+  .conf .programme-card { padding: 16px; }
+  .conf table { min-width: 460px; font-size: 0.88rem; }
+  .conf th, .conf td { padding: 9px 7px; }
+  .conf td:first-child { width: 110px; }
+  .conf .theme-quote { font-size: 1.02rem; }
+  .conf .date { font-size: 1rem; }
+}
