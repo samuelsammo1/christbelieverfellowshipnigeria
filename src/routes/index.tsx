@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import "../conference.css";
+import logo from "../assets/cbf-logo.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -121,8 +122,11 @@ function Index() {
         <div className="container">
           <nav>
             <a className="brand" href="#home" onClick={close}>
-              Christ Believers Fellowship
-              <span>Conference 2026</span>
+              <img src={logo.url} alt="Christ Believers Fellowship logo" className="brand-logo" />
+              <span className="brand-text">
+                Christ Believers Fellowship
+                <span>in conjunction with Free Bible Students</span>
+              </span>
             </a>
 
             <button
