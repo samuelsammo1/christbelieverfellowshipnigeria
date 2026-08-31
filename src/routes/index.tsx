@@ -234,19 +234,19 @@ function Index() {
 
             <div className="timer">
               <div className="time-box">
-                <strong>{days}</strong>
+                <strong suppressHydrationWarning>{days}</strong>
                 <span>Days</span>
               </div>
               <div className="time-box">
-                <strong>{pad(hours)}</strong>
+                <strong suppressHydrationWarning>{pad(hours)}</strong>
                 <span>Hours</span>
               </div>
               <div className="time-box">
-                <strong>{pad(minutes)}</strong>
+                <strong suppressHydrationWarning>{pad(minutes)}</strong>
                 <span>Minutes</span>
               </div>
               <div className="time-box">
-                <strong>{pad(seconds)}</strong>
+                <strong suppressHydrationWarning>{pad(seconds)}</strong>
                 <span>Seconds</span>
               </div>
             </div>
