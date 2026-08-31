@@ -29,7 +29,8 @@ const REGISTER_URL = "https://forms.gle/RCy8tkR8YHyUVxuj8";
 const CONFERENCE_TS = Date.UTC(2026, 10, 13, 15, 30, 0);
 
 function useCountdown() {
-  const [left, setLeft] = useState<number | null>(null);
+  // Seeded on first render (server and client) so the boxes never flash zeros.
+  const [left, setLeft] = useState(() => Math.max(0, CONFERENCE_TS - Date.now()));
 
   useEffect(() => {
     const tick = () => setLeft(Math.max(0, CONFERENCE_TS - Date.now()));
@@ -38,15 +39,15 @@ function useCountdown() {
     return () => clearInterval(id);
   }, []);
 
-  const d = left ?? 0;
   return {
-    days: Math.floor(d / 86400000),
-    hours: Math.floor(d / 3600000) % 24,
-    minutes: Math.floor(d / 60000) % 60,
-    seconds: Math.floor(d / 1000) % 60,
-    started: left !== null && left <= 0,
+    days: Math.floor(left / 86400000),
+    hours: Math.floor(left / 3600000) % 24,
+    minutes: Math.floor(left / 60000) % 60,
+    seconds: Math.floor(left / 1000) % 60,
+    started: left <= 0,
   };
 }
+
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
