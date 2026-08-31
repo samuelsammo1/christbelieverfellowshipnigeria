@@ -48,12 +48,29 @@
 .conf .brand {
       font-weight: 800;
       font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 0;
     }
-.conf .brand span {
+.conf .brand-logo {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #fff;
+      padding: 2px;
+      flex: none;
+    }
+.conf .brand-text {
+      display: block;
+      line-height: 1.25;
+    }
+.conf .brand-text span {
       display: block;
       color: #e8c873;
-      font-size: 0.76rem;
-      margin-top: -3px;
+      font-size: 0.74rem;
+      font-weight: 700;
     }
 .conf .nav-links {
       display: flex;
