@@ -784,3 +784,61 @@
 @media (max-width: 600px) {
   .donate-card { padding: 1.5rem; }
 }
+
+/* --- Hero cinematic church backdrop + entrance animation --- */
+.conf .hero {
+  isolation: isolate;
+}
+.conf .hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.42;
+  z-index: -2;
+  animation: hero-zoom 22s ease-in-out infinite alternate;
+}
+.conf .hero-veil {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 50% 25%, rgba(232, 200, 115, 0.16), transparent 60%),
+    linear-gradient(180deg, rgba(11, 26, 46, 0.72), rgba(11, 26, 46, 0.92));
+}
+@keyframes hero-zoom {
+  from { transform: scale(1.06) translateY(0); }
+  to   { transform: scale(1.18) translateY(-14px); }
+}
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes hero-shine {
+  0%   { background-position: -220% center; }
+  100% { background-position: 220% center; }
+}
+.conf .hero .reveal {
+  opacity: 0;
+  animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.conf .hero .d1 { animation-delay: 0.05s; }
+.conf .hero .d2 { animation-delay: 0.2s; }
+.conf .hero .d3 { animation-delay: 0.38s; }
+.conf .hero .d4 { animation-delay: 0.52s; }
+.conf .hero .d5 { animation-delay: 0.66s; }
+.conf .hero h1 {
+  background: linear-gradient(100deg, #ffffff 32%, #f3d98f 50%, #ffffff 68%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards,
+             hero-shine 6s linear 1.2s infinite;
+  text-shadow: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .conf .hero-bg,
+  .conf .hero h1,
+  .conf .hero .reveal { animation: none; opacity: 1; }
+}
