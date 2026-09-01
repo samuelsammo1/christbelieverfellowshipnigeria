@@ -119,7 +119,7 @@ function Index() {
       <main id="home">
         <section className="hero">
           <div className="container">
-            <div className="eyebrow">Christ Believers Fellowship</div>
+            <div className="eyebrow">Present November 2026 Annual Conference</div>
             <h1>The Ransom That Restored Humanity</h1>
             <p>
               Come and join us as we lift a triumphant shout to the Lord — to learn,
@@ -128,9 +128,14 @@ function Index() {
             <div className="date">
               13–14 November 2026 &nbsp; • &nbsp; Ugehli, Delta State, Nigeria
             </div>
-            <Link to="/register" className="btn btn-gold">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfBIlAqVXfAYd3GgAHROVsZxV8F_3MTQlPcGmvQQInY5cRWKg/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-gold"
+            >
               Register for the Conference
-            </Link>
+            </a>
             <a href="#programme" className="btn btn-outline">
               View Programme
             </a>
@@ -338,9 +343,14 @@ function Index() {
               Register today and join believers gathering to worship, learn and grow
               together in Christ.
             </p>
-            <Link to="/register" className="btn">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfBIlAqVXfAYd3GgAHROVsZxV8F_3MTQlPcGmvQQInY5cRWKg/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn"
+            >
               Register Now
-            </Link>
+            </a>
           </div>
         </section>
       </main>

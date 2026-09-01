@@ -22,7 +22,7 @@ export function ConferenceHeader() {
           <Link className="brand" to="/" onClick={close}>
             <img src={logo.url} alt="Christ Believers Fellowship logo" className="brand-logo" />
             <span className="brand-text">
-              Christ Believers Fellowship
+              Christ Believers Fellowship Nigeria
               <span>in conjunction with Free Bible Students</span>
             </span>
           </Link>
@@ -45,9 +45,18 @@ export function ConferenceHeader() {
             <Link to="/speakers" onClick={close}>
               Speakers
             </Link>
-            <Link to="/register" className="btn btn-gold" onClick={close}>
-              Register
+            <Link to="/donate" onClick={close}>
+              Donate
             </Link>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfBIlAqVXfAYd3GgAHROVsZxV8F_3MTQlPcGmvQQInY5cRWKg/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-gold"
+              onClick={close}
+            >
+              Register
+            </a>
           </div>
         </nav>
       </div>
