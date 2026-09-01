@@ -118,25 +118,31 @@ function Index() {
 
       <main id="home">
         <section className="hero">
+          <div
+            className="hero-bg"
+            style={{ backgroundImage: `url(${churchHero})` }}
+            aria-hidden="true"
+          />
+          <div className="hero-veil" aria-hidden="true" />
           <div className="container">
-            <div className="eyebrow">Present November 2026 Annual Conference</div>
+            <div className="eyebrow reveal d1">Present November 2026 Annual Conference</div>
             <h1>The Ransom That Restored Humanity</h1>
-            <p>
+            <p className="reveal d3">
               Come and join us as we lift a triumphant shout to the Lord — to learn,
               fellowship, worship and grow together in Christ.
             </p>
-            <div className="date">
+            <div className="date reveal d4">
               13–14 November 2026 &nbsp; • &nbsp; Ugehli, Delta State, Nigeria
             </div>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSfBIlAqVXfAYd3GgAHROVsZxV8F_3MTQlPcGmvQQInY5cRWKg/viewform"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-gold"
+              className="btn btn-gold reveal d5"
             >
               Register for the Conference
             </a>
-            <a href="#programme" className="btn btn-outline">
+            <a href="#programme" className="btn btn-outline reveal d5">
               View Programme
             </a>
           </div>
