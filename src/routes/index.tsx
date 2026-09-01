@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import "../conference.css";
 import { ConferenceHeader } from "../components/conference-header";
+import churchHero from "../assets/church-hero.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
