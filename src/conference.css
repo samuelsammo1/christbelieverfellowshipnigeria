@@ -750,3 +750,37 @@
   .conf .brand-logo { width: 38px; height: 38px; }
   .conf .brand-text span { font-size: 0.65rem; }
 }
+
+/* Donate */
+.donate-card {
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--card, #fff);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+.donate-details {
+  margin: 1.5rem 0;
+  display: grid;
+  gap: 1rem;
+}
+.donate-details > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.donate-details span {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cmuted, #666);
+}
+.donate-details strong {
+  font-size: 1.25rem;
+}
+@media (max-width: 600px) {
+  .donate-card { padding: 1.5rem; }
+}
