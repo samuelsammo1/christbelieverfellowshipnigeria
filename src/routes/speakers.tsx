@@ -97,9 +97,14 @@ function SpeakersPage() {
                 <h2>Sermon speakers to be announced</h2>
                 <p>The opening sermon and sermon session speakers will be published here once confirmed.</p>
               </div>
-              <Link className="btn btn-gold" to="/register">
+              <a
+                className="btn btn-gold"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfBIlAqVXfAYd3GgAHROVsZxV8F_3MTQlPcGmvQQInY5cRWKg/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Register to attend
-              </Link>
+              </a>
             </div>
           </div>
         </section>
