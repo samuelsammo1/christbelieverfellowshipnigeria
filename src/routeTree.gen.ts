@@ -10,17 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as RegisterRouteImport } from './routes/register'
 import { Route as SpeakersRouteImport } from './routes/speakers'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RegisterRoute = RegisterRouteImport.update({
-  id: '/register',
-  path: '/register',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SpeakersRoute = SpeakersRouteImport.update({
@@ -31,31 +25,27 @@ const SpeakersRoute = SpeakersRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/register': typeof RegisterRoute
   '/speakers': typeof SpeakersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/register': typeof RegisterRoute
   '/speakers': typeof SpeakersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/register': typeof RegisterRoute
   '/speakers': typeof SpeakersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/register' | '/speakers'
+  fullPaths: '/' | '/speakers'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/register' | '/speakers'
-  id: '__root__' | '/' | '/register' | '/speakers'
+  to: '/' | '/speakers'
+  id: '__root__' | '/' | '/speakers'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  RegisterRoute: typeof RegisterRoute
   SpeakersRoute: typeof SpeakersRoute
 }
 
@@ -66,13 +56,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/register': {
-      id: '/register'
-      path: '/register'
-      fullPath: '/register'
-      preLoaderRoute: typeof RegisterRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/speakers': {
@@ -87,7 +70,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  RegisterRoute: RegisterRoute,
   SpeakersRoute: SpeakersRoute,
 }
 export const routeTree = rootRouteImport
