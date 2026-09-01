@@ -788,24 +788,31 @@
 /* --- Hero cinematic church backdrop + entrance animation --- */
 .conf .hero {
   isolation: isolate;
+  position: relative;
+  overflow: hidden;
+}
+.conf .hero > *:not(.hero-bg):not(.hero-veil) {
+  position: relative;
+  z-index: 2;
 }
 .conf .hero-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.42;
-  z-index: -2;
+  opacity: 0.55;
+  z-index: 0;
   animation: hero-zoom 22s ease-in-out infinite alternate;
 }
 .conf .hero-veil {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 1;
   background:
     radial-gradient(ellipse at 50% 25%, rgba(232, 200, 115, 0.16), transparent 60%),
-    linear-gradient(180deg, rgba(11, 26, 46, 0.72), rgba(11, 26, 46, 0.92));
+    linear-gradient(180deg, rgba(11, 26, 46, 0.62), rgba(11, 26, 46, 0.88));
 }
+
 @keyframes hero-zoom {
   from { transform: scale(1.06) translateY(0); }
   to   { transform: scale(1.18) translateY(-14px); }
