@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ConferenceHeader } from "../components/conference-header";
+import churchHero from "../assets/church-hero.jpg";
 import "../conference.css";
+
 
 export const Route = createFileRoute("/donate")({
   head: () => ({
@@ -30,15 +32,22 @@ function DonatePage() {
       <ConferenceHeader />
       <main>
         <section className="page-hero">
+          <div
+            className="hero-bg"
+            style={{ backgroundImage: `url(${churchHero})` }}
+            aria-hidden="true"
+          />
+          <div className="hero-veil" aria-hidden="true" />
           <div className="container">
-            <div className="eyebrow">Support the Conference</div>
+            <div className="eyebrow reveal d1">Support the Conference</div>
             <h1>Give a Donation</h1>
-            <p>
+            <p className="reveal d3">
               Your giving helps us prepare the venue, accommodation and meals for everyone
               gathering in Ugehli on 13–14 November 2026. Thank you for partnering with us.
             </p>
           </div>
         </section>
+
 
         <section>
           <div className="container">

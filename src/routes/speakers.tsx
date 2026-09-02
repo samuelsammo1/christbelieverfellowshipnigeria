@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ConferenceHeader } from "../components/conference-header";
+import churchHero from "../assets/church-hero.jpg";
 import "../conference.css";
+
 
 export const Route = createFileRoute("/speakers")({
   head: () => ({
@@ -57,15 +59,22 @@ function SpeakersPage() {
       <ConferenceHeader />
       <main>
         <section className="page-hero speakers-hero">
+          <div
+            className="hero-bg"
+            style={{ backgroundImage: `url(${churchHero})` }}
+            aria-hidden="true"
+          />
+          <div className="hero-veil" aria-hidden="true" />
           <div className="container">
-            <div className="eyebrow">Conference voices</div>
+            <div className="eyebrow reveal d1">Conference voices</div>
             <h1>Meet the Conference Team</h1>
-            <p>
+            <p className="reveal d3">
               Brothers and sisters serving through worship, teaching, session leadership and
               open discussion around this year’s theme: The Ransom That Restored Humanity.
             </p>
           </div>
         </section>
+
 
         <section>
           <div className="container">
