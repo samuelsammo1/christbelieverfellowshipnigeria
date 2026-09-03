@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DonateRouteImport } from './routes/donate'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SpeakersRouteImport } from './routes/speakers'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const DonateRoute = DonateRouteImport.update({
   path: '/donate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SpeakersRoute = SpeakersRouteImport.update({
   id: '/speakers',
   path: '/speakers',
@@ -32,30 +38,34 @@ const SpeakersRoute = SpeakersRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/donate': typeof DonateRoute
+  '/privacy': typeof PrivacyRoute
   '/speakers': typeof SpeakersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/donate': typeof DonateRoute
+  '/privacy': typeof PrivacyRoute
   '/speakers': typeof SpeakersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/donate': typeof DonateRoute
+  '/privacy': typeof PrivacyRoute
   '/speakers': typeof SpeakersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/donate' | '/speakers'
+  fullPaths: '/' | '/donate' | '/privacy' | '/speakers'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/donate' | '/speakers'
-  id: '__root__' | '/' | '/donate' | '/speakers'
+  to: '/' | '/donate' | '/privacy' | '/speakers'
+  id: '__root__' | '/' | '/donate' | '/privacy' | '/speakers'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DonateRoute: typeof DonateRoute
+  PrivacyRoute: typeof PrivacyRoute
   SpeakersRoute: typeof SpeakersRoute
 }
 
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DonateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/speakers': {
       id: '/speakers'
       path: '/speakers'
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DonateRoute: DonateRoute,
+  PrivacyRoute: PrivacyRoute,
   SpeakersRoute: SpeakersRoute,
 }
 export const routeTree = rootRouteImport
