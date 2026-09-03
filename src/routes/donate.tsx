@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ConferenceHeader } from "../components/conference-header";
 import churchHero from "../assets/church-hero.jpg";
 import "../conference.css";
+import { ConferenceFooter } from "../components/conference-footer";
 
 
 export const Route = createFileRoute("/donate")({
@@ -76,15 +77,7 @@ function DonatePage() {
           </div>
         </section>
       </main>
-      <footer>
-        <div className="container">
-          <strong>Christ Believers Fellowship Conference 2026</strong>
-          <p className="small">The Ransom That Restored Humanity • Ugehli, Delta State, Nigeria</p>
-          <p className="small footer-legal">
-            <a href="/privacy">Privacy Policy &amp; Terms of Use</a>
-          </p>
-        </div>
-      </footer>
+      <ConferenceFooter />
     </div>
   );
 }
