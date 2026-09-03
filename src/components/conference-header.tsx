@@ -48,9 +48,6 @@ export function ConferenceHeader() {
             <Link to="/donate" onClick={close}>
               Donate
             </Link>
-            <Link to="/privacy" onClick={close}>
-              Privacy
-            </Link>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSfBIlAqVXfAYd3GgAHROVsZxV8F_3MTQlPcGmvQQInY5cRWKg/viewform"
               target="_blank"
