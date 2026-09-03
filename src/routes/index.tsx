@@ -368,6 +368,9 @@ function Index() {
           <p className="small">
             The Ransom That Restored Humanity • Ugehli, Delta State, Nigeria
           </p>
+          <p className="small footer-legal">
+            <a href="/privacy">Privacy Policy &amp; Terms of Use</a>
+          </p>
         </div>
       </footer>
     </div>

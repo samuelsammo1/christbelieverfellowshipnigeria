@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ConferenceHeader } from "../components/conference-header";
+import "../conference.css";
 import churchHero from "../assets/church-hero.jpg";
 
 export const Route = createFileRoute("/privacy")({

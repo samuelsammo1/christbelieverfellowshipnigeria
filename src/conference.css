@@ -898,3 +898,86 @@
   .conf .page-hero h1,
   .conf .page-hero .reveal { animation: none; opacity: 1; }
 }
+
+/* --- Privacy / Terms page --- */
+.conf .hero-small {
+  padding: 110px 0 90px;
+}
+.conf .hero-small h1 {
+  max-width: 900px;
+}
+.conf .privacy-section {
+  background: #fff;
+}
+.conf .privacy-section .container {
+  display: grid;
+  gap: 32px;
+}
+.conf .legal-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 34px;
+  box-shadow: var(--shadow);
+}
+.conf .legal-card h2 {
+  color: var(--navy);
+  margin-bottom: 18px;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+}
+.conf .legal-card p,
+.conf .legal-card li {
+  color: var(--text);
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+.conf .legal-card a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.conf .legal-card a:hover {
+  color: #a87920;
+}
+.conf .legal-card ol {
+  padding-left: 22px;
+  margin: 18px 0;
+}
+.conf .legal-card ol li {
+  margin-bottom: 14px;
+  padding-left: 6px;
+}
+.conf .legal-card ol li::marker {
+  color: var(--gold);
+  font-weight: 700;
+}
+.conf .footer-legal {
+  margin-top: 12px;
+}
+.conf .footer-legal a {
+  color: #e8c873;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.conf .footer-legal a:hover {
+  color: #fff;
+}
+@media (max-width: 800px) {
+  .conf .hero-small {
+    padding: 86px 0 68px;
+  }
+  .conf .legal-card {
+    padding: 24px;
+  }
+}
+@media (max-width: 560px) {
+  .conf .hero-small {
+    padding: 72px 0 56px;
+  }
+  .conf .legal-card {
+    padding: 20px 17px;
+  }
+  .conf .legal-card ol {
+    padding-left: 18px;
+  }
+}
