@@ -1027,8 +1027,7 @@
   color: #e8c873;
   font-size: 0.9rem;
   font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
 }
 .conf .footer-legal-col a:hover,
 .conf .footer-whatsapp-col a:hover {
