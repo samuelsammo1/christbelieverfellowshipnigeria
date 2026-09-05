@@ -40,7 +40,7 @@ export function ConferenceFooter() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            CDMI Efik Translations
+            Africa CDMI online
           </a>
           <a
             href="https://chat.whatsapp.com/GeLksI5lGadLGbFvnTIE1R"
