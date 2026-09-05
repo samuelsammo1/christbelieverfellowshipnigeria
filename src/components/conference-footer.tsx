@@ -32,6 +32,31 @@ export function ConferenceFooter() {
           <Link to="/privacy">Privacy Policy</Link>
           <Link to="/donate">Donations</Link>
         </div>
+
+        <div className="footer-whatsapp-col">
+          <strong>Join WhatsApp group for more information</strong>
+          <a
+            href="https://chat.whatsapp.com/LJGUjKWaKlT6qhwVLR0b2s"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CDMI Efik Translations
+          </a>
+          <a
+            href="https://chat.whatsapp.com/GeLksI5lGadLGbFvnTIE1R"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Free Bible Students
+          </a>
+          <a
+            href="https://chat.whatsapp.com/DYJTZQpHZ7LH2i2mCWrnOS"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Christ Believers Fellowship
+          </a>
+        </div>
       </div>
     </footer>
   );
