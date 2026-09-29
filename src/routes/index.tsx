@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import "../conference.css";
 import { ConferenceHeader } from "../components/conference-header";
 import churchHero from "../assets/church-hero.jpg";
-import cbfLogo from "../assets/cbf-logo.jpeg";
 import { ConferenceFooter } from "../components/conference-footer";
 
 export const Route = createFileRoute("/")({
@@ -101,7 +100,7 @@ function Index() {
               2026 Annual Conference
             </div>
 
-            <h1>The Ransom That Restored Humanity</h1>
+            <h1>The Ransom That Will Restore Humanity</h1>
 
             <p className="reveal d3">
               Come and join us as we gather to learn, worship, fellowship and
