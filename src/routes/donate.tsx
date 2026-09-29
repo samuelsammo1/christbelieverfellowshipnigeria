@@ -44,7 +44,7 @@ function DonatePage() {
             <h1>Give a Donation</h1>
             <p className="reveal d3">
               Your giving helps us prepare the venue, accommodation and meals for everyone
-              gathering in Ugehli on 13–14 November 2026. Thank you for partnering with us.
+              gathering in Ugehli on 13–15 November 2026. Thank you for partnering with us.
             </p>
           </div>
         </section>

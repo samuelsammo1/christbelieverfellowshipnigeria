@@ -103,10 +103,9 @@ function SpeakersPage() {
 
             <div className="announcement-band">
               <div>
-                <div className="eyebrow">Coming soon</div>
-                <h2>Sermon speakers to be announced</h2>
-                <p>The opening sermon and sermon session speakers will be published here once confirmed.</p>
-              </div>
+                <div className="eyebrow">Click  hereto Register</div>
+               
+               </div>
               <a
                 className="btn btn-gold"
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfBIlAqVXfAYd3GgAHROVsZxV8F_3MTQlPcGmvQQInY5cRWKg/viewform"

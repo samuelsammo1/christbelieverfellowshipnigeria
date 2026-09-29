@@ -6,7 +6,6 @@ import logo from "../assets/cbf-logo.jpeg.asset.json";
 const conferenceLinks = [
   ["Theme", "/#theme"],
   ["Countdown", "/#countdown"],
-  ["Programme", "/#programme"],
   ["Panel", "/#panel"],
   ["Location", "/#location"],
 ] as const;
@@ -47,6 +46,9 @@ export function ConferenceHeader() {
             </Link>
             <Link to="/donate" onClick={close}>
               Donate
+            </Link>
+             <Link to="/programme" onClick={close}>
+              Programme
             </Link>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSfBIlAqVXfAYd3GgAHROVsZxV8F_3MTQlPcGmvQQInY5cRWKg/viewform"
