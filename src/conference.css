@@ -1619,3 +1619,18 @@
     gap: 8px;
   }
 }
+/* Watch Live */
+.conf .live-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.conf .live-card { background: var(--card, #fff); border: 1px solid rgba(201,162,39,.35); border-radius: 18px; padding: 24px; display: grid; gap: 16px; min-width: 0; }
+.conf .live-form { display: grid; gap: 8px; }
+.conf .live-form label { font-weight: 600; }
+.conf .live-form-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.conf .live-form-row input { flex: 1 1 200px; padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(0,0,0,.2); font: inherit; }
+.conf .live-status { margin: 0; opacity: .85; }
+.conf .live-status.ok { font-weight: 600; }
+.conf .live-error { margin: 0; color: #b42318; }
+.conf .live-zoom-root { width: 100%; min-height: 0; }
+.conf .live-fallback { justify-self: start; }
+.conf .live-info ol { padding-left: 20px; display: grid; gap: 8px; }
+.conf .nav-links a.live-link { color: #c9a227; font-weight: 700; }
+@media (max-width: 860px) { .conf .live-layout { grid-template-columns: 1fr; } .conf .live-card { padding: 16px; } .conf .live-fallback { justify-self: stretch; text-align: center; } }

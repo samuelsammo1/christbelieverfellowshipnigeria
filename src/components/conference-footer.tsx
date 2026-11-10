@@ -31,6 +31,7 @@ export function ConferenceFooter() {
           <Link to="/privacy">Terms of Use</Link>
           <Link to="/privacy">Privacy Policy</Link>
           <Link to="/donate">Donations</Link>
+          <Link to="/live">Watch Live</Link>
         </div>
 
         <div className="footer-whatsapp-col">

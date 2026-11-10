@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Zoom live embed: signatures are minted only in `src/lib/zoom.functions.ts` (role forced to participant, meeting from server env); the SDK is dynamically imported client-side because it touches `window`.

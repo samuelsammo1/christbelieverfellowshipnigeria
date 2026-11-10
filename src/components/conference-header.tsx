@@ -41,6 +41,9 @@ export function ConferenceHeader() {
                 {label}
               </a>
             ))}
+            <Link to="/live" className="live-link" onClick={close}>
+              Watch Live
+            </Link>
             <Link to="/speakers" onClick={close}>
               Speakers
             </Link>
