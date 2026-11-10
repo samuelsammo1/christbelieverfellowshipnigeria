@@ -5,4 +5,4 @@
 - [x] Link registration and speakers from the conference navigation.
 - [ ] Verify responsive layouts and registration submission in the live preview.
 - [x] Watch Live page with embedded Zoom Meeting SDK, secure signature, fallback link.
-- [ ] Test real Zoom join — blocked on ZOOM_SDK_KEY / ZOOM_SDK_SECRET from user.
+- [ ] Test real Zoom join — blocked on ZOOM_CLIENT_ID / ZOOM_CLIENT_SECRET, plus Zoom app review + ZAK/OBF for external meetings from user.
