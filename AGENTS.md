@@ -9,4 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Zoom live embed: signatures are minted only in `src/lib/zoom.functions.ts` (uses ZOOM_CLIENT_ID as JWT appKey, role forced to participant, meeting from server env, no sdkKey sent to client); the SDK is dynamically imported client-side because it touches `window`.
+- Watch Live (`src/routes/live.tsx`) links directly to the Zoom meeting URL. The embedded Zoom Meeting SDK was removed because the meeting owner cannot provide the Zoom Client ID/Secret.

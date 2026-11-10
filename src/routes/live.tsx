@@ -1,21 +1,19 @@
-import { createFileRoute, ClientOnly } from "@tanstack/react-router";
-import { lazy, Suspense } from "react";
+import { createFileRoute } from "@tanstack/react-router";
 
 import { ConferenceHeader } from "../components/conference-header";
 import { ConferenceFooter } from "../components/conference-footer";
 import churchHero from "../assets/church-hero.jpg";
 import "../conference.css";
 
-const ZoomEmbed = lazy(() => import("../components/zoom-embed").then((m) => ({ default: m.ZoomEmbed })));
 const ZOOM_URL = "https://us06web.zoom.us/j/81170870077?pwd=k9QW5lh0E98blxKkqm7nIDmU0ujjos.1";
 
 export const Route = createFileRoute("/live")({
   head: () => ({
     meta: [
       { title: "Watch Live — Christ Believers Fellowship Nigeria" },
-      { name: "description", content: "Join the Christ Believers Fellowship Nigeria service live on Zoom, right from this website." },
+      { name: "description", content: "Join the Christ Believers Fellowship Nigeria service live on Zoom." },
       { property: "og:title", content: "Watch Live — Christ Believers Fellowship Nigeria" },
-      { property: "og:description", content: "Join our church service live through Zoom on the CBF Nigeria website." },
+      { property: "og:description", content: "Join our church service live on Zoom." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -24,7 +22,6 @@ export const Route = createFileRoute("/live")({
 });
 
 function LivePage() {
-  const fallback = <div className="live-card"><p className="live-status">Loading live player…</p></div>;
   return (
     <div className="conf">
       <ConferenceHeader />
@@ -35,23 +32,27 @@ function LivePage() {
           <div className="container">
             <div className="eyebrow reveal d1">Online Service</div>
             <h1>Watch Live</h1>
-            <p className="reveal d3">Join our service through Zoom directly on this page.</p>
+            <p className="reveal d3">Join our service live on Zoom.</p>
           </div>
         </section>
         <section>
           <div className="container live-layout">
-            <ClientOnly fallback={fallback}>
-              <Suspense fallback={fallback}>
-                <ZoomEmbed fallbackUrl={ZOOM_URL} />
-              </Suspense>
-            </ClientOnly>
+            <div className="live-card">
+              <h2>Join on Zoom</h2>
+              <p className="live-status">
+                Click the button below to join the service in the Zoom app or in your browser.
+              </p>
+              <a className="btn btn-gold" href={ZOOM_URL} target="_blank" rel="noopener noreferrer">
+                Join on Zoom
+              </a>
+            </div>
             <aside className="live-info">
               <h2>How to join</h2>
               <ol>
-                <li>Type your name and press <strong>Join service</strong>.</li>
-                <li>Allow your browser to use your microphone/camera if asked — you can stay muted with video off.</li>
+                <li>Press <strong>Join on Zoom</strong>.</li>
+                <li>Open the Zoom app when asked, or choose to join from your browser.</li>
                 <li>The host must start the meeting and admit participants. Until then you'll wait to be let in.</li>
-                <li>If joining here doesn't work, use <strong>Open in Zoom instead</strong>.</li>
+                <li>If the link doesn't work, open Zoom and enter the Meeting ID and Passcode below.</li>
               </ol>
               <div className="donate-details">
                 <div><span>Meeting ID</span><strong>811 7087 0077</strong></div>
