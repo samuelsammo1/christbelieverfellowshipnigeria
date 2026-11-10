@@ -1,25 +1,56 @@
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 import logo from "../assets/cbf-logo.jpeg.asset.json";
 
-const conferenceLinks = [
-  ["Theme", "/#theme"],
-  ["Countdown", "/#countdown"],
-  ["Panel", "/#panel"],
-  ["Location", "/#location"],
+const REGISTER_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfBIlAqVXfAYd3GgAHROVsZxV8F_3MTQlPcGmvQQInY5cRWKg/viewform";
+
+const navLinks = [
+  { to: "/", label: "Home", exact: true },
+  { to: "/programme", label: "Programme", exact: false },
+  { to: "/speakers", label: "Speakers", exact: false },
+  { to: "/live", label: "Watch Live", exact: false },
+  { to: "/donate", label: "Donate", exact: false },
 ] as const;
 
 export function ConferenceHeader() {
   const [open, setOpen] = useState(false);
+  const menuButton = useRef<HTMLButtonElement>(null);
+  const navRef = useRef<HTMLElement>(null);
   const close = () => setOpen(false);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButton.current?.focus();
+      }
+    };
+    const onPointer = (event: PointerEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) setOpen(false);
+    };
+
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onPointer);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onPointer);
+    };
+  }, [open]);
+
   return (
-    <header>
+    <header className="site-header">
+      <a className="skip-link" href="#main">
+        Skip to main content
+      </a>
       <div className="container">
-        <nav>
+        <nav ref={navRef} aria-label="Main">
           <Link className="brand" to="/" onClick={close}>
-            <img src={logo.url} alt="Christ Believers Fellowship logo" className="brand-logo" />
+            <img src={logo.url} alt="" className="brand-logo" width={46} height={46} />
             <span className="brand-text">
               Christ Believers Fellowship Nigeria
               <span>in conjunction with Free Bible Students</span>
@@ -27,37 +58,34 @@ export function ConferenceHeader() {
           </Link>
 
           <button
+            ref={menuButton}
+            type="button"
             className="menu"
             onClick={() => setOpen((value) => !value)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
+            aria-controls="primary-nav"
           >
-            ☰
+            {open ? <X aria-hidden="true" size={26} /> : <Menu aria-hidden="true" size={26} />}
           </button>
 
-          <div className={`nav-links${open ? " show" : ""}`}>
-            {conferenceLinks.map(([label, to]) => (
-              <a key={label} href={to} onClick={close}>
-                {label}
-              </a>
+          <div id="primary-nav" className={`nav-links${open ? " show" : ""}`}>
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={link.to === "/live" ? "nav-link live-link" : "nav-link"}
+                activeOptions={{ exact: link.exact }}
+                onClick={close}
+              >
+                {link.label}
+              </Link>
             ))}
-            <Link to="/live" className="live-link" onClick={close}>
-              Watch Live
-            </Link>
-            <Link to="/speakers" onClick={close}>
-              Speakers
-            </Link>
-            <Link to="/donate" onClick={close}>
-              Donate
-            </Link>
-             <Link to="/programme" onClick={close}>
-              Programme
-            </Link>
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfBIlAqVXfAYd3GgAHROVsZxV8F_3MTQlPcGmvQQInY5cRWKg/viewform"
+              href={REGISTER_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-gold"
+              className="btn btn-gold nav-cta"
               onClick={close}
             >
               Register

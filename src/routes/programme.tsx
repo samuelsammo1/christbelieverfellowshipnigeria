@@ -26,7 +26,7 @@ function Programme() {
      <div className="conf">
   <ConferenceHeader />
 
-  <main>
+  <main id="main">
     <section className="hero programme-hero">
       <div
         className="hero-bg"
@@ -280,7 +280,7 @@ function ScheduleTable({ rows }: { rows: Row[] }) {
             <tr key={`${time}-${index}`}>
               <td>{time}</td>
               <td>{programme}</td>
-              <td>{responsible}</td>
+              <td className={responsible === "—" ? "is-empty" : undefined}>{responsible}</td>
             </tr>
           ))}
         </tbody>

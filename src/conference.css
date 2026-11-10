@@ -1,93 +1,244 @@
+/* =========================================
+   DESIGN TOKENS
+   Palette: navy #14243B, gold #C7A45B, ivory #F7F5EF, forest #253D35.
+   --gold-ink is a darker gold for small text on light backgrounds (AA contrast).
+   ========================================= */
 .conf {
-      --navy: #10243e;
-      --gold: #c89b3c;
-      --cream: #f8f4ea;
-      --white: #ffffff;
-      --text: #263238;
-      --cmuted: #68737d;
-      --line: #e7e1d5;
-      --shadow: 0 12px 35px rgba(16, 36, 62, 0.10);
-    }
+  --navy: #14243b;
+  --navy-deep: #0d1828;
+  --gold: #c7a45b;
+  --gold-dark: #b08d45;
+  --gold-light: #e3c98e;
+  --gold-ink: #7d6229;
+  --ivory: #f7f5ef;
+  --forest: #253d35;
+  --forest-soft: #e8efeb;
+  --cream: var(--ivory);
+  --white: #ffffff;
+  --text: #1f2a37;
+  --cmuted: #5b6573;
+  --line: #e6e0d2;
+  --shadow: 0 12px 35px rgba(20, 36, 59, 0.08);
+  --radius: 16px;
+  --focus: var(--navy);
+  --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --header-h: 76px;
+}
 .conf * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.conf) {
+    scroll-behavior: smooth;
+  }
+}
 .conf {
-      scroll-behavior: smooth;
-    }
-.conf {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: #fff;
-      line-height: 1.6;
-    }
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.conf h1,
+.conf h2,
+.conf h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
 .conf a {
       text-decoration: none;
       color: inherit;
     }
+
+/* Anchor targets land below the sticky header */
+.conf [id] {
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
+
+/* Keyboard focus: navy ring on light areas, light-gold ring on dark areas */
+.conf :focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.conf .site-header,
+.conf .hero,
+.conf .page-hero,
+.conf .countdown,
+.conf .cta,
+.conf .panel-header,
+.conf .announcement-band,
+.conf footer {
+  --focus: var(--gold-light);
+}
+
+.conf .skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 1100;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+}
+.conf .skip-link:focus {
+  top: 12px;
+}
 .conf .container {
       width: min(1120px, 92%);
       margin: auto;
     }
-.conf header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(16, 36, 62, 0.98);
-      color: white;
-      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
-    }
-.conf nav {
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
+/* =========================================
+   HEADER & NAVIGATION
+   ========================================= */
+.conf .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(20, 36, 59, 0.97);
+  color: var(--white);
+  border-bottom: 1px solid rgba(199, 164, 91, 0.25);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.14);
+  backdrop-filter: saturate(140%) blur(8px);
+}
+.conf .site-header nav {
+  position: relative;
+  min-height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
 .conf .brand {
-      font-weight: 800;
-      font-size: 1.05rem;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 8px 0;
-    }
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  font-weight: 700;
+  font-size: 1rem;
+  min-width: 0;
+}
 .conf .brand-logo {
-      width: 46px;
-      height: 46px;
-      object-fit: contain;
-      border-radius: 50%;
-      background: #fff;
-      padding: 2px;
-      flex: none;
-    }
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: var(--white);
+  padding: 2px;
+  flex: none;
+  box-shadow: 0 0 0 2px rgba(199, 164, 91, 0.55);
+}
 .conf .brand-text {
-      display: block;
-      line-height: 1.25;
-    }
+  display: block;
+  line-height: 1.25;
+}
 .conf .brand-text span {
-      display: block;
-      color: #e8c873;
-      font-size: 0.74rem;
-      font-weight: 700;
-    }
+  display: block;
+  color: var(--gold-light);
+  font-size: 0.74rem;
+  font-weight: 600;
+}
 .conf .nav-links {
-      display: flex;
-      gap: 22px;
-      align-items: center;
-      font-size: 0.92rem;
-    }
-.conf .nav-links a:hover {
-      color: #e8c873;
-    }
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.93rem;
+  font-weight: 500;
+}
+.conf .nav-link {
+  position: relative;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.88);
+  transition: color 0.2s, background 0.2s;
+}
+.conf .nav-link:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.07);
+}
+.conf .nav-link[aria-current="page"],
+.conf .nav-link[data-status="active"] {
+  color: var(--gold-light);
+}
+.conf .nav-link[aria-current="page"]::after,
+.conf .nav-link[data-status="active"]::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 2px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gold);
+}
+.conf .nav-links .nav-cta {
+  margin-left: 10px;
+  padding: 10px 20px;
+}
 .conf .menu {
-      display: none;
-      background: none;
-      border: 0;
-      color: white;
-      font-size: 1.7rem;
-    }
+  display: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+}
+
+@media (max-width: 1040px) {
+  .conf .menu {
+    display: grid;
+  }
+  .conf .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 12px 4% 20px;
+    background: var(--navy);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.25);
+  }
+  .conf .nav-links.show {
+    display: flex;
+  }
+  .conf .nav-link {
+    padding: 13px 14px;
+    font-size: 1rem;
+  }
+  .conf .nav-link[aria-current="page"],
+  .conf .nav-link[data-status="active"] {
+    background: rgba(199, 164, 91, 0.12);
+  }
+  .conf .nav-link[aria-current="page"]::after,
+  .conf .nav-link[data-status="active"]::after {
+    left: 0;
+    right: auto;
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    height: auto;
+  }
+  .conf .nav-links .nav-cta {
+    display: block;
+    width: 100%;
+    margin: 10px 0 0;
+    text-align: center;
+  }
+}
 .conf .hero {
       background:
         linear-gradient(
@@ -123,12 +274,21 @@
       bottom: -310px;
     }
 .conf .eyebrow {
-      color: #e8c873;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 0.78rem;
-      font-weight: 700;
-    }
+  color: var(--gold-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+/* Eyebrows on dark backgrounds */
+.conf .hero .eyebrow,
+.conf .page-hero .eyebrow,
+.conf .countdown .eyebrow,
+.conf .cta .eyebrow,
+.conf .panel-header .eyebrow,
+.conf .announcement-band .eyebrow {
+  color: var(--gold-light);
+}
 .conf h1 {
       font-size: clamp(2.3rem, 6vw, 4.7rem);
       line-height: 1.05;
@@ -146,29 +306,50 @@
       font-size: 1.1rem;
       margin: 18px 0 28px;
     }
+/* Buttons: navy text on gold keeps AA contrast (white on gold does not) */
 .conf .btn {
-      display: inline-block;
-      padding: 13px 23px;
-      border-radius: 8px;
-      font-weight: 800;
-      transition: 0.2s;
-    }
+  display: inline-block;
+  min-height: 48px;
+  padding: 13px 26px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
 .conf .btn-gold {
-      background: var(--gold);
-      color: white;
-    }
+  background: var(--gold);
+  color: var(--navy);
+  box-shadow: 0 8px 20px rgba(199, 164, 91, 0.28);
+}
 .conf .btn-gold:hover {
-      transform: translateY(-2px);
-      background: #b98b2e;
-    }
+  transform: translateY(-2px);
+  background: var(--gold-light);
+}
 .conf .btn-outline {
-      border: 1px solid rgba(255,255,255,0.45);
-      color: white;
-      margin-left: 8px;
-    }
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--white);
+  margin-left: 8px;
+}
 .conf .btn-outline:hover {
-      background: rgba(255,255,255,0.1);
-    }
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--white);
+}
+.conf .btn-navy {
+  background: var(--navy);
+  color: var(--white);
+}
+.conf .btn-navy:hover {
+  transform: translateY(-2px);
+  background: var(--forest);
+}
+@media (prefers-reduced-motion: reduce) {
+  .conf .btn:hover {
+    transform: none;
+  }
+}
 .conf section {
       padding: 72px 0;
     }
@@ -177,7 +358,7 @@
       margin-bottom: 42px;
     }
 .conf .section-title .eyebrow {
-      color: var(--gold);
+      color: var(--gold-ink);
     }
 .conf h2 {
       font-size: clamp(1.8rem, 4vw, 2.6rem);
@@ -261,7 +442,7 @@
 .conf .time-box strong {
       display: block;
       font-size: 2rem;
-      color: #e8c873;
+      color: var(--gold-light);
     }
 .conf .time-box span {
       font-size: 0.8rem;
@@ -362,7 +543,7 @@
       margin-bottom: 5px;
     }
 .conf .cta {
-      background: linear-gradient(135deg, #c89b3c, #a87920);
+      background: linear-gradient(135deg, var(--navy), var(--forest));
       color: white;
       text-align: center;
     }
@@ -374,11 +555,11 @@
       margin: 0 auto 25px;
     }
 .conf .cta .btn {
-      background: white;
+      background: var(--gold);
       color: var(--navy);
     }
 .conf footer {
-      background: #0b1a2c;
+      background: var(--navy-deep);
       color: #cfd7df;
       padding: 35px 0;
       text-align: center;
@@ -391,23 +572,6 @@
       margin-top: 8px;
     }
 @media (max-width: 800px) {
-.conf .nav-links {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: var(--navy);
-        padding: 18px 5%;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-.conf .nav-links.show {
-        display: flex;
-      }
-.conf .menu {
-        display: block;
-      }
 .conf .theme-grid, .conf .panel-grid, .conf .info-grid {
         grid-template-columns: 1fr;
       }
@@ -447,13 +611,11 @@
 
 /* extra responsive polish */
 
-.conf .nav-links.show { display: flex; }
 @media (max-width: 1024px) {
   .conf .theme-grid { gap: 20px; }
 }
 @media (max-width: 800px) {
   .conf .brand { font-size: 0.98rem; }
-  .conf .nav-links .btn { width: auto; margin: 6px 0; }
   .conf .theme-card,
   .conf .programme-card,
   .conf .panel,
@@ -663,7 +825,7 @@
   height: 72px;
   border-radius: 50%;
   background: var(--navy);
-  color: #e8c873;
+  color: var(--gold-light);
   font-weight: 800;
   letter-spacing: 1px;
 }
@@ -801,13 +963,13 @@
 
 .panel-header {
   padding: 55px 50px;
-  background: #17395f;
+  background: var(--navy);
   color: white;
   text-align: center;
 }
 
 .panel-header .eyebrow {
-  color: #d69b2d;
+  color: var(--gold);
   margin-bottom: 12px;
 }
 
@@ -846,8 +1008,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #d69b2d;
-  color: #17395f;
+  background: var(--gold);
+  color: var(--navy);
   font-size: 12px;
   font-weight: 800;
 }
@@ -858,7 +1020,7 @@
 
 .panel-heading h3 {
   margin: 0;
-  color: #17395f;
+  color: var(--navy);
   font-size: 23px;
 }
 
@@ -886,20 +1048,20 @@
 }
 
 .moderator > span {
-  color: #d69b2d;
+  color: var(--gold-ink);
   font-size: 12px;
   font-weight: 800;
 }
 
 .moderator strong {
-  color: #17395f;
+  color: var(--navy);
   font-size: 14px;
 }
 
 .moderator small {
   display: block;
   margin-top: 3px;
-  color: #d69b2d;
+  color: var(--gold-ink);
   font-size: 11px;
   font-weight: 700;
 }
@@ -937,7 +1099,7 @@
   justify-content: center;
   border-radius: 9px;
   background: #eef2f7;
-  color: #17395f;
+  color: var(--navy);
   font-size: 12px;
   font-weight: 800;
 }
@@ -983,7 +1145,7 @@
 
 .programme-page-hero {
   padding: 110px 0 80px;
-  background: #17395f;
+  background: var(--navy);
   color: #fff;
   text-align: center;
 }
@@ -995,12 +1157,12 @@
 }
 
 .programme-page-hero .eyebrow {
-  color: #d69b2d;
+  color: var(--gold);
 }
 
 .programme-page-theme {
   margin: 0 0 12px;
-  color: #d69b2d;
+  color: var(--gold);
   font-size: 20px;
   font-weight: 600;
 }
@@ -1043,14 +1205,14 @@
   height: 60px;
   flex-shrink: 0;
   border-radius: 15px;
-  background: #17395f;
-  color: #d69b2d;
+  background: var(--navy);
+  color: var(--gold);
   font-weight: 800;
 }
 
 .programme-day-header h2 {
   margin: 5px 0 10px;
-  color: #17395f;
+  color: var(--navy);
 }
 
 .programme-day-header p {
@@ -1061,7 +1223,7 @@
 .programme-day > h3 {
   margin: 0;
   padding: 30px 42px 15px;
-  color: #17395f;
+  color: var(--navy);
 }
 
 .programme-session {
@@ -1074,7 +1236,7 @@
 
 .programme-session h3 {
   margin: 5px 0 25px;
-  color: #17395f;
+  color: var(--navy);
 }
 
 .schedule-table-wrap {
@@ -1088,7 +1250,7 @@
 
 .schedule-table th {
   padding: 15px 18px;
-  background: #17395f;
+  background: var(--navy);
   color: #fff;
   text-align: left;
   font-size: 13px;
@@ -1104,7 +1266,7 @@
 
 .schedule-table td:first-child {
   width: 180px;
-  color: #17395f;
+  color: var(--navy);
   font-weight: 700;
   white-space: nowrap;
 }
@@ -1286,12 +1448,12 @@
   line-height: 1.7;
 }
 .conf .legal-card a {
-  color: var(--gold);
+  color: var(--gold-ink);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 .conf .legal-card a:hover {
-  color: #a87920;
+  color: var(--navy);
 }
 .conf .legal-card ol {
   padding-left: 22px;
@@ -1302,14 +1464,14 @@
   padding-left: 6px;
 }
 .conf .legal-card ol li::marker {
-  color: var(--gold);
+  color: var(--gold-ink);
   font-weight: 700;
 }
 .conf .footer-legal {
   margin-top: 12px;
 }
 .conf .footer-legal a {
-  color: #e8c873;
+  color: var(--gold-light);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -1378,7 +1540,7 @@
 }
 .conf .footer-legal-col a,
 .conf .footer-whatsapp-col a {
-  color: #e8c873;
+  color: var(--gold-light);
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
@@ -1412,110 +1574,6 @@
     grid-template-columns: 1fr;
   }
 }
-.programme-tabs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 1000px;
-  margin: 50px auto 42px;
-}
-
-.programme-tab {
-  position: relative;
-  min-height: 190px;
-  padding: 28px 30px;
-  border: 1px solid #dce2e9;
-  border-radius: 20px;
-  background: #fff;
-  color: #143054;
-  text-align: left;
-  cursor: pointer;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  box-shadow: 0 8px 25px rgba(20, 48, 84, 0.06);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease,
-    background 0.25s ease;
-}
-
-.programme-tab:hover {
-  transform: translateY(-5px);
-  border-color: #d69b2d;
-  box-shadow: 0 15px 35px rgba(20, 48, 84, 0.12);
-}
-
-.programme-tab.active {
-  background: #18395f;
-  border-color: #18395f;
-  color: #fff;
-  transform: translateY(-5px);
-  box-shadow: 0 18px 40px rgba(20, 48, 84, 0.22);
-}
-
-.programme-day {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.programme-date {
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 12px;
-}
-
-.programme-label {
-  display: block !important;
-  font-size: 14px;
-  line-height: 1.5;
-  opacity: 0.7;
-  margin-top: auto;
-  padding-right: 35px;
-}
-
-.programme-tab.active .programme-label {
-  opacity: 0.9;
-}
-
-.programme-tab::after {
-  content: "→";
-  position: absolute;
-  right: 28px;
-  bottom: 25px;
-  font-size: 24px;
-  color: #d69b2d;
-  transition: transform 0.25s ease;
-}
-
-.programme-tab:hover::after {
-  transform: translateX(5px);
-}
-
-@media (max-width: 800px) {
-  .programme-tabs {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .programme-tab {
-    min-height: 150px;
-    padding: 22px;
-  }
-
-  .programme-date {
-    font-size: 21px;
-  }
-}
-
 /* =========================================
    PROGRAMME PAGE HERO
    ========================================= */
@@ -1558,7 +1616,7 @@
 
 .conf .programme-page-hero .eyebrow {
   margin-bottom: 24px;
-  color: #d69b2d;
+  color: var(--gold);
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 3px;
@@ -1597,7 +1655,7 @@
 }
 
 .conf .programme-page-hero .programme-page-meta span:first-child {
-  color: #d69b2d;
+  color: var(--gold);
 }
 
 @media (max-width: 700px) {
@@ -1619,18 +1677,301 @@
     gap: 8px;
   }
 }
-/* Watch Live */
-.conf .live-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 28px; align-items: start; }
-.conf .live-card { background: var(--card, #fff); border: 1px solid rgba(201,162,39,.35); border-radius: 18px; padding: 24px; display: grid; gap: 16px; min-width: 0; }
-.conf .live-form { display: grid; gap: 8px; }
-.conf .live-form label { font-weight: 600; }
-.conf .live-form-row { display: flex; gap: 10px; flex-wrap: wrap; }
-.conf .live-form-row input { flex: 1 1 200px; padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(0,0,0,.2); font: inherit; }
-.conf .live-status { margin: 0; opacity: .85; }
-.conf .live-status.ok { font-weight: 600; }
-.conf .live-error { margin: 0; color: #b42318; }
-.conf .live-zoom-root { width: 100%; min-height: 0; }
-.conf .live-fallback { justify-self: start; }
-.conf .live-info ol { padding-left: 20px; display: grid; gap: 8px; }
-.conf .nav-links a.live-link { color: #c9a227; font-weight: 700; }
-@media (max-width: 860px) { .conf .live-layout { grid-template-columns: 1fr; } .conf .live-card { padding: 16px; } .conf .live-fallback { justify-self: stretch; text-align: center; } }
+
+/* =========================================
+   CONSISTENT PAGE HEROES
+   ========================================= */
+.conf .page-hero {
+  text-align: center;
+}
+.conf .page-hero h1 {
+  margin: 12px auto 16px;
+}
+.conf .page-hero p {
+  margin: 0 auto;
+}
+
+/* =========================================
+   PROGRAMME PAGE FIXES
+   The day cards are <section> elements, so cancel the generic section padding.
+   ========================================= */
+.conf .programme-day {
+  padding: 0;
+  border-color: var(--line);
+  border-radius: var(--radius);
+}
+.conf .programme-day-header {
+  background: var(--ivory);
+  border-bottom-color: var(--line);
+}
+.conf .programme-day-header > span {
+  color: var(--gold-light);
+}
+.conf .programme-day-header p {
+  color: var(--cmuted);
+}
+.conf .schedule-table {
+  min-width: 0;
+}
+.conf .schedule-table th {
+  background: var(--navy);
+  font-family: var(--font-body);
+  letter-spacing: 0.08em;
+}
+.conf .schedule-table td {
+  color: var(--text);
+}
+.conf .schedule-table td:first-child {
+  color: var(--navy);
+}
+.conf .schedule-table td:last-child {
+  color: var(--cmuted);
+}
+.conf .schedule-table tr:nth-child(even) {
+  background: var(--ivory);
+}
+
+/* Small screens: stack each row instead of scrolling sideways */
+@media (max-width: 640px) {
+  .conf .schedule-table,
+  .conf .schedule-table tbody,
+  .conf .schedule-table tr,
+  .conf .schedule-table td {
+    display: block;
+    width: 100%;
+  }
+  .conf .schedule-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .conf .schedule-table tr {
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--line);
+  }
+  .conf .schedule-table td {
+    padding: 0;
+    border: 0;
+    font-size: 0.95rem;
+  }
+  .conf .schedule-table td:first-child {
+    width: auto;
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+    white-space: normal;
+  }
+  .conf .schedule-table td:last-child {
+    margin-top: 4px;
+    font-size: 0.88rem;
+  }
+  .conf .schedule-table td:last-child:empty,
+  .conf .schedule-table td.is-empty {
+    display: none;
+  }
+}
+
+/* =========================================
+   WATCH LIVE
+   ========================================= */
+.conf .live-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.conf .live-card,
+.conf .live-info {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 36px;
+}
+.conf .live-card {
+  display: grid;
+  gap: 18px;
+  background: var(--ivory);
+}
+.conf .live-card h2,
+.conf .live-info h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+}
+.conf .live-lead {
+  color: var(--cmuted);
+}
+.conf .live-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--forest-soft);
+  color: var(--forest);
+  font-weight: 500;
+}
+.conf .live-status svg {
+  flex: none;
+  margin-top: 2px;
+}
+.conf .live-status strong {
+  display: block;
+  font-weight: 700;
+}
+.conf .live-join {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+}
+.conf .live-note {
+  font-size: 0.85rem;
+  color: var(--cmuted);
+}
+.conf .meeting-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.conf .meeting-details div {
+  display: grid;
+  gap: 2px;
+}
+.conf .meeting-details span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cmuted);
+}
+.conf .meeting-details strong {
+  font-size: 1.25rem;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+}
+.conf .live-info {
+  background: var(--white);
+}
+.conf .live-steps {
+  list-style: none;
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+  counter-reset: step;
+}
+.conf .live-steps li {
+  position: relative;
+  padding-left: 46px;
+  counter-increment: step;
+}
+.conf .live-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: -2px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-light);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.conf .session-section {
+  background: var(--ivory);
+}
+.conf .session-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+.conf .session-card {
+  position: relative;
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+.conf .session-card h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 1.2rem;
+}
+.conf .session-time {
+  font-weight: 700;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.conf .session-local,
+.conf .session-chair {
+  font-size: 0.88rem;
+  color: var(--cmuted);
+}
+.conf .session-card.is-current,
+.conf .session-card.is-next {
+  border-color: var(--forest);
+  box-shadow: 0 0 0 1px var(--forest), var(--shadow);
+}
+.conf .session-flag {
+  justify-self: start;
+  margin-bottom: 4px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--forest);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.conf .session-footnote {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--cmuted);
+}
+@media (max-width: 1000px) {
+  .conf .session-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 860px) {
+  .conf .live-layout {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .conf .live-card,
+  .conf .live-info {
+    padding: 24px 20px;
+  }
+  .conf .live-join {
+    justify-self: stretch;
+    justify-content: center;
+  }
+  .conf .session-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .conf .programme-day-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .conf .programme-day-header > span {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+}

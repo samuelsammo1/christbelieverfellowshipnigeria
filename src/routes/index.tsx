@@ -82,7 +82,7 @@ function Index() {
     <div className="conf">
       <ConferenceHeader />
 
-      <main id="home">
+      <main id="main">
         {/* =====================================================
             HERO
         ===================================================== */}

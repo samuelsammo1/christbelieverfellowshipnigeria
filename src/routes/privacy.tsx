@@ -34,7 +34,7 @@ function PrivacyPage() {
     <div className="conf">
       <ConferenceHeader />
 
-      <main>
+      <main id="main">
         <section className="hero hero-small">
           <div
             className="hero-bg"

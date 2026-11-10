@@ -58,7 +58,7 @@ function SpeakersPage() {
   return (
     <div className="conf">
       <ConferenceHeader />
-      <main>
+      <main id="main">
         <section className="page-hero speakers-hero">
           <div
             className="hero-bg"

@@ -31,7 +31,7 @@ function DonatePage() {
   return (
     <div className="conf">
       <ConferenceHeader />
-      <main>
+      <main id="main">
         <section className="page-hero">
           <div
             className="hero-bg"
