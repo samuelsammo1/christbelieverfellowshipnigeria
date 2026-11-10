@@ -13,7 +13,7 @@ export const Route = createFileRoute("/donate")({
       {
         name: "description",
         content:
-          "Support the Christ Believers Fellowship Conference 2026 in Ugehli, Delta State with a donation.",
+          "Support the Christ Believers Fellowship Conference 2026 in Ughelli, Delta State with a donation.",
       },
       { property: "og:title", content: "Donate — CBF Conference 2026" },
       {
@@ -44,7 +44,7 @@ function DonatePage() {
             <h1>Give a Donation</h1>
             <p className="reveal d3">
               Your giving helps us prepare the venue, accommodation and meals for everyone
-              gathering in Ugehli on 13–15 November 2026. Thank you for partnering with us.
+              gathering in Ughelli on 13–15 November 2026. Thank you for partnering with us.
             </p>
           </div>
         </section>

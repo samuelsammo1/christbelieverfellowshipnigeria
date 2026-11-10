@@ -9,7 +9,7 @@ import { ConferenceFooter } from "../components/conference-footer";
 
 const REGISTER_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSfBIlAqVXfAYd3GgAHROVsZxV8F_3MTQlPcGmvQQInY5cRWKg/viewform";
-const MAP_URL = "https://www.google.com/maps/search/?api=1&query=Demix+Hotel+Ugheli+Delta+State+Nigeria";
+const MAP_URL = "https://www.google.com/maps/search/?api=1&query=No.+2+Teshoma+Street+Oghenevweta+Ughelli+Delta+State+Nigeria";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "The Ransom, Restoration of Humanity — Christ Believers Fellowship Nigeria Conference, 13–15 November 2026, Demix Hotel, Ugheli, Delta State, Nigeria.",
+          "The Ransom, Restoration of Humanity — Christ Believers Fellowship Nigeria Conference, 13–15 November 2026, No. 2 Teshoma Street, Oghenevweta, Ughelli, Delta State, Nigeria.",
       },
       {
         property: "og:title",
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Join us 13–15 November 2026 in Ugheli, Delta State for worship, teaching and fellowship — in person or on Zoom.",
+          "Join us 13–15 November 2026 in Ughelli, Delta State for worship, teaching and fellowship — in person or on Zoom.",
       },
       {
         property: "og:type",
@@ -129,7 +129,7 @@ function Index() {
             <div className="date reveal d4">
               13–15 November 2026
               <span aria-hidden="true"> &nbsp; • &nbsp; </span>
-              Ugheli, Delta State, Nigeria
+              Ughelli, Delta State, Nigeria
             </div>
 
             <div className="hero-actions reveal d5">
@@ -169,8 +169,8 @@ function Index() {
               <li className="glance-item">
                 <MapPin aria-hidden="true" />
                 <div>
-                  <strong>Demix Hotel</strong>
-                  <span>Ugheli, Delta State</span>
+                  <strong>No. 2 Teshoma Street</strong>
+                  <span>Oghenevweta, Ughelli, Delta State</span>
                 </div>
               </li>
               <li className="glance-item">
@@ -281,7 +281,7 @@ function Index() {
 
               <p suppressHydrationWarning>
                 {phase === "before"
-                  ? "We look forward to welcoming you to Ugheli, Delta State."
+                  ? "We look forward to welcoming you to Ughelli, Delta State."
                   : phase === "during"
                     ? "Can’t be there in person? Join the sessions online."
                     : "Conference 2026 has ended. God bless you all."}
@@ -430,7 +430,7 @@ function Index() {
 
               <h2>Date, Venue &amp; Registration</h2>
 
-              <p>Everything you need to join us in Ugheli.</p>
+              <p>Everything you need to join us in Ughelli.</p>
             </div>
 
             <div className="info-grid">
@@ -457,9 +457,9 @@ function Index() {
 
                 <h3>Venue</h3>
 
-                <p>Demix Hotel</p>
+                <p>No. 2 Teshoma Street, Oghenevweta</p>
 
-                <p>Ugheli, Delta State, Nigeria</p>
+                <p>Ughelli, Delta State, Nigeria</p>
 
                 <a href={MAP_URL} target="_blank" rel="noopener noreferrer" className="info-link">
                   Open in Google Maps

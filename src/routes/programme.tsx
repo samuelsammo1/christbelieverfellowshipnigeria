@@ -14,7 +14,7 @@ export const Route = createFileRoute("/programme")({
       {
         name: "description",
         content:
-          "Programme of events for the Christ Believers Fellowship Conference 2026, 13–15 November 2026, Ugheli, Delta State, Nigeria.",
+          "Programme of events for the Christ Believers Fellowship Conference 2026, 13–15 November 2026, Ughelli, Delta State, Nigeria.",
       },
     ],
   }),
@@ -50,7 +50,7 @@ function Programme() {
         <div className="date reveal d4">
           13–15 November 2026
           &nbsp; • &nbsp;
-          Ugheli, Delta State, Nigeria
+          Ughelli, Delta State, Nigeria
         </div>
       </div>
     </section>

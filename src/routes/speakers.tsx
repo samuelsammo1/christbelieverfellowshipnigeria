@@ -15,12 +15,12 @@ export const Route = createFileRoute("/speakers")({
       {
         name: "description",
         content:
-          "Meet the Bible study speakers, symposium speakers and session chairmen for the Christ Believers Fellowship Conference 2026 in Ugheli, Delta State.",
+          "Meet the Bible study speakers, symposium speakers and session chairmen for the Christ Believers Fellowship Conference 2026 in Ughelli, Delta State.",
       },
       { property: "og:title", content: "Speakers — CBF Conference 2026" },
       {
         property: "og:description",
-        content: "Meet the speakers and session leaders for CBF Conference 2026 in Ugheli, Delta State.",
+        content: "Meet the speakers and session leaders for CBF Conference 2026 in Ughelli, Delta State.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -252,7 +252,7 @@ function SpeakersPage() {
 
             <div className="announcement-band">
               <div>
-                <div className="eyebrow">13–15 November 2026 · Ugheli, Delta State</div>
+                <div className="eyebrow">13–15 November 2026 · Ughelli, Delta State</div>
                 <h2>Join us for Conference 2026</h2>
                 <p>
                   Registration is free. Prefer to follow online?{" "}

@@ -12,7 +12,7 @@ export function ConferenceFooter() {
         <div className="footer-info">
           <strong>Christ Believers Fellowship Nigeria</strong>
           <p className="small">
-            2026 Annual Conference • Ugehli, Delta State, Nigeria
+            2026 Annual Conference • Ughelli, Delta State, Nigeria
           </p>
           <p className="small">
             <a href="mailto:fellowshipchristbelievers@gmail.com">
