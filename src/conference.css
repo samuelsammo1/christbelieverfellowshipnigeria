@@ -2255,3 +2255,55 @@
     flex-direction: column;
   }
 }
+
+/* =========================================
+   SPEAKERS PAGE
+   ========================================= */
+.conf .speaker-grid {
+  list-style: none;
+}
+.conf .speaker-card {
+  background: var(--white);
+  border-color: var(--line);
+}
+.conf .speaker-section-alt {
+  background: var(--ivory);
+}
+.conf .speaker-card .eyebrow {
+  font-size: 0.7rem;
+}
+.conf .speaker-card p.speaker-topic {
+  margin-bottom: 4px;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.conf .speaker-card p.speaker-ref {
+  color: var(--gold-ink);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+.conf .speaker-avatar {
+  font-family: var(--font-body);
+}
+.conf .speaker-note {
+  margin-top: 28px;
+  text-align: center;
+  color: var(--cmuted);
+}
+.conf .speaker-note a,
+.conf .announcement-band p a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.conf .speaker-note a {
+  color: var(--navy);
+}
+.conf .announcement-band p a {
+  color: var(--gold-light);
+}
+.conf .announcement-band {
+  margin-top: 44px;
+  background: linear-gradient(135deg, var(--navy), var(--forest));
+}
