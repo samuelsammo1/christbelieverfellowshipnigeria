@@ -14,7 +14,7 @@ export const Route = createFileRoute("/programme")({
       {
         name: "description",
         content:
-          "Programme of events for the Christ Believers Fellowship Conference 2026, 13–15 November 2026, Ugehli, Delta State, Nigeria.",
+          "Programme of events for the Christ Believers Fellowship Conference 2026, 13–15 November 2026, Ugheli, Delta State, Nigeria.",
       },
     ],
   }),
@@ -42,15 +42,15 @@ function Programme() {
         </div>
 
         <h1>
-         The Ransom That
+         The Ransom,
           <br />
-        Will Restore Humanity
+        Restoration of Humanity
         </h1>
-        
+
         <div className="date reveal d4">
           13–15 November 2026
           &nbsp; • &nbsp;
-          Ugehli, Delta State, Nigeria
+          Ugheli, Delta State, Nigeria
         </div>
       </div>
     </section>
@@ -100,7 +100,7 @@ function Programme() {
 
     <div className="programme-session">
       <div className="eyebrow">Afternoon Session</div>
-      <h3>Chairman: Bro. Emmanuel Jackson</h3>
+      <h3>Chairman: Bro. Owo Okon</h3>
 
       <ScheduleTable rows={saturdayPM} />
     </div>
@@ -160,94 +160,106 @@ const saturdayAM: Row[] = [
   ["7:30 am – 8:50 am", "Breakfast", "—"],
   ["8:50 am – 9:30 am", "Arrival of Brethren at the Conference Hall", "—"],
   ["9:30 am – 10:00 am", "Worship Service (Morning Devotion)", "—"],
-  ["10:00 am – 10:15 am", "Opening Hymn / Song", "—"],
-  ["10:15 am – 10:20 am", "Opening Prayer", "Bro. Daniel Jimmy"],
+  ["10:00 am – 10:05 am", "Opening Hymn No. 169", "—"],
+  ["10:05 am – 10:10 am", "Opening Prayer", "Bro. Daniel Jimmy"],
   [
-    "10:20 am – 10:40 am",
+    "10:10 am – 10:30 am",
     "Welcome Address / Reading of Psalm 95:1–8",
-    "Welcome Address: Bro. Paul Teshoma / Reading: Sis. Ruth Jimmy",
+    "Welcome: Bro. Paul Teshoma / Reading: Sis. Ruth Jimmy",
   ],
-  ["10:40 am – 10:45 am", "Hymn / Prayer", "Bro. Godwin Edoja"],
+  ["10:30 am – 10:35 am", "Hymn No. 137 / Prayer", "Bro. Godwin Edoja"],
   [
-    "10:45 am – 11:15 am",
+    "10:35 am – 11:05 am",
     'Bible Study: "Humanity’s Original Destiny" – Genesis 1:26–31; Psalm 8:4–9',
     "Bro. Monday Udo",
   ],
-  ["11:15 am – 11:20 am", "Hymn / Prayer", "Bro. Dennis y"],
-  ["11:20 am – 11:30 am", "Intermission", "—"],
-  ["11:30 am – 11:35 am", "Hymn / Prayer", "Bro. Richard"],
-  ["11:35 am – 12:15 pm", "SYMPOSIUM", "Topic / Question:"],
-  ["12:15 pm – 12:20 pm", "Hymn / Prayer", "Bro. Godwin Edoja"],
+  ["11:05 am – 11:10 am", "Hymn No. 359 / Prayer", "Bro. Dennis Peter"],
   [
-    "12:20 pm – 12:50 pm",
+    "11:10 am – 11:25 am",
+    'Restoration Symposium · Part 1: "The Need and Promise of Restoration" – Acts 3:19–21',
+    "Bro. Paul Teshoma",
+  ],
+  [
+    "11:25 am – 11:40 am",
+    'Restoration Symposium · Part 2: "The Ransom and the Accomplishment of Restoration" – Acts 3:19–21; Matthew 20:28',
+    "Bro. Owo Okon / Bro. Dennis Peter",
+  ],
+  ["11:40 am – 11:45 am", "Hymn No. 23 / Prayer", "Bro. Owo Okon / Bro. Dennis Peter"],
+  [
+    "11:45 am – 12:15 pm",
     'Bible Study: "The Tragedy: How Humanity Lost Life" – Genesis 2:16–17; 3:1–24; Romans 5:12',
     "Bro. Emmanuel Jackson",
   ],
+  ["12:15 pm – 12:20 pm", "Intermission", "—"],
+  [
+    "12:20 pm – 12:50 pm",
+    'Bible Study: "Why a Ransom Was Necessary" – Psalm 49:6–9; Romans 3:23–26',
+    "Bro. Bruce Blake",
+  ],
   [
     "12:50 pm – 1:20 pm",
-    "Humanity Today: Dangers Facing Our World – Matthew 24:4–14; 2 Timothy 3:1–5; Luke 21:25–26",
-    "Bro. Jim Sochacki",
-  ],
-  ["1:20 pm – 2:00 pm", "Lunch", "—"],
-];
-
-const saturdayPM: Row[] = [
-  ["2:00 pm – 2:05 pm", "Hymn and Prayer", "Bro. Dennis Peter"],
-  [
-    "2:05 pm – 2:35 pm",
-    'Bible Study: "Why a Ransom Was Necessary" – Psalm 49:6–9; Romans 3:23–26',
-    "Bro. Michael Walter",
-  ],
-  ["2:35 pm – 2:40 pm", "Hymn / Prayer", "Bro. Owo Okon"],
-  [
-    "2:40 pm – 3:10 pm",
     'Bible Study: "Jesus: The Man Who Gave His Life" – Matthew 20:28; John 10:17–18',
     "Bro. Godwin Edoja",
   ],
-  ["3:10 pm – 3:15 pm", "Hymn / Prayer", "Bro. Inimfon Jackson"],
-  ["3:15 pm – 3:20 pm", "Intercession", "—"],
+  ["1:20 pm – 1:25 pm", "Hymn No. 30 / Prayer", "Bro. Godwin Edoja"],
+  ["1:25 pm – 2:00 pm", "Lunch", "—"],
+];
+
+const saturdayPM: Row[] = [
+  ["2:00 pm – 2:05 pm", "Hymn No. 5 / Prayer", "Bro. Dennis Peter"],
+  [
+    "2:05 pm – 2:35 pm",
+    'Bible Study: "The Ransom – What Jesus Accomplished" – Hebrews 7:27',
+    "Bro. Percival Blenman",
+  ],
+  ["2:35 pm – 2:40 pm", "Hymn No. 342 / Prayer", "Sis. Merit Teshoma"],
+  [
+    "2:40 pm – 3:10 pm",
+    'Bible Study: "Humanity Today: Dangers Facing Our World" – Matthew 24:4–14; 2 Timothy 3:1–5; Luke 21:25–26',
+    "Bro. Jim Sochacki (USA)",
+  ],
+  ["3:10 pm – 3:15 pm", "Hymn No. 168 / Prayer", "Bro. Inimfon Jackson"],
+  ["3:15 pm – 3:20 pm", "Intermission", "—"],
   ["3:20 pm – 3:50 pm", 'Bible Study: "The Resurrection"', "Bro. Gordon Coulson"],
-  ["3:50 pm – 3:55 pm", "Hymn and Prayer", "Bro. Gordon Coulson"],
-  ["3:55 pm – 4:55 pm", "PANEL DISCUSSION", "Panelists"],
-  ["4:55 pm – 5:00 pm", "Hymn and Closing Prayer", "—"],
+  ["3:50 pm – 3:55 pm", "Hymn No. 243 / Prayer", "Bro. Gordon Coulson"],
+  [
+    "3:55 pm – 4:55 pm",
+    "Panel Discussion",
+    "Bro. Gideon Jimmy (Chairman), Bro. Sunday Enang, Bro. Anosike Onyenwe, Bro. Dennis Peter, Bro. Monday Udo",
+  ],
+  ["4:55 pm – 5:00 pm", "Closing Hymn No. 4 / Closing Prayer", "Bro. Monday Udo"],
 ];
 
 const sundayAM: Row[] = [
   ["7:30 am – 8:50 am", "Breakfast", "—"],
   ["8:50 am – 9:30 am", "Arrival of Brethren at the Conference Hall", "—"],
   ["9:30 am – 10:00 am", "Worship Service (Morning Devotion)", "—"],
-  ["10:00 am – 10:15 am", "Opening Hymn / Song", "—"],
-  ["10:15 am – 10:20 am", "Opening Prayer", "Bro. UtibeAbasi Peter"],
+  ["10:00 am – 10:15 am", "Opening Hymn No. 319 / Opening Prayer", "Bro. UtibeAbasi Peter"],
   [
-    "10:20 am – 10:45 am",
-    'Bible Study: "Jesus: The Man Who Gave His Life" – Matthew 20:28; John 1:14; 10:17–18',
-    "Bro. Anosike E.",
+    "10:15 am – 10:45 am",
+    'Bible Study: "The Return and Kingdom of Christ" – Daniel 2:44; Psalm 2:6–12; Revelation 11:15',
+    "Bro. Anosike Onyenwe",
   ],
-  ["10:45 am – 10:50 am", "Hymn / Prayer", "Bro. Anosike E."],
+  ["10:45 am – 10:50 am", "Hymn No. 8 / Prayer", "Bro. Anosike Onyenwe"],
   [
     "10:50 am – 11:20 am",
-    'Bible Study: "The Return and Kingdom of Christ" – Daniel 2:44; Psalm 2:6–12; Revelation 11:15',
+    'Bible Study: "The Kingdom’s Work of Restoration" – Isaiah 35:1–10; Isaiah 65:17–25; Revelation 21:1–5',
     "Bro. Sunday Enang",
   ],
   [
     "11:20 am – 11:55 am",
-    "The Ransom’s Final Triumph: Humanity Reconciled to God – 1 Corinthians 15:20–28; Revelation 21:3–4; Revelation 22:3–5",
+    'Bible Study: "The Ransom’s Final Triumph: Humanity Reconciled to God" – 1 Corinthians 15:20–28; Revelation 21:3–4; 22:3–5',
     "Bro. Michael Walter",
   ],
-  ["11:55 am – 12:00 pm", "Intermission", "—"],
+  ["11:55 am – 12:10 pm", "Intermission", "—"],
 ];
 
 const sundayPM: Row[] = [
-  ["12:00 pm – 12:15 pm", "Hymn / Prayer", "Bro. Monday Pius"],
-  ["12:15 pm – 1:00 pm", "SYMPOSIUM", "Topic / Question: / Prayer"],
-  ["1:00 pm – 2:00 pm", "Lunch", "—"],
-  [
-    "2:00 pm – 2:20 pm",
-    "Announcement and Closing Remarks",
-    "Bro. Emmanuel Jackson",
-  ],
-  ["2:20 pm", "Closing Hymn", "—"],
-  ["After Closing Hymn", "Closing Prayer", "—"],
+  ["12:10 pm – 12:15 pm", "Hymn No. 187 / Prayer", "Sis. Merit Paul"],
+  ["12:15 pm – 12:25 pm", "Word of Encouragement", "Bro. Monye Piue"],
+  ["12:25 pm – 1:00 pm", "Questions Time", "—"],
+  ["1:00 pm – 2:20 pm", "Announcements and Closing Remarks", "Bro. Gideon Jimmy"],
+  ["2:20 pm – 3:00 pm", "Closing Hymns Nos. 84 and 64 / Closing Prayer", "—"],
   ["After Closing Prayer", "Evangelism", "—"],
 ];
 
