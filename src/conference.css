@@ -1320,6 +1320,16 @@
   z-index: 0;
   animation: hero-zoom 22s ease-in-out infinite alternate;
 }
+/* Hero backdrop image (URLs set by churchHeroStyle in src/lib/church-hero.ts):
+   the original JPEG everywhere, WebP in browsers that support image-set() type(). */
+.conf .hero-bg {
+  background-image: var(--hero-jpg);
+}
+@supports (background-image: image-set(url("a.webp") type("image/webp"))) {
+  .conf .hero-bg {
+    background-image: image-set(var(--hero-webp) type("image/webp"), var(--hero-jpg) type("image/jpeg"));
+  }
+}
 .conf .hero-veil {
   position: absolute;
   inset: 0;

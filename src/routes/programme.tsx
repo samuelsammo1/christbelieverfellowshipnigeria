@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ConferenceHeader } from "../components/conference-header";
-import churchHero from "../assets/church-hero.jpg";
+import { churchHeroStyle } from "../lib/church-hero";
 import "../conference.css";
 import { ConferenceFooter } from "../components/conference-footer";
 
@@ -30,7 +30,7 @@ function Programme() {
     <section className="hero programme-hero">
       <div
         className="hero-bg"
-        style={{ backgroundImage: `url(${churchHero})` }}
+        style={churchHeroStyle}
         aria-hidden="true"
       />
 

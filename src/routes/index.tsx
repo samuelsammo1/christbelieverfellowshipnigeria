@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import "../conference.css";
 import { ConferenceHeader } from "../components/conference-header";
-import churchHero from "../assets/church-hero.jpg";
+import { churchHeroStyle } from "../lib/church-hero";
 import { ConferenceFooter } from "../components/conference-footer";
 
 const REGISTER_URL =
@@ -110,7 +110,7 @@ function Index() {
         <section className="hero home-hero">
           <div
             className="hero-bg"
-            style={{ backgroundImage: `url(${churchHero})` }}
+            style={churchHeroStyle}
             aria-hidden="true"
           />
 

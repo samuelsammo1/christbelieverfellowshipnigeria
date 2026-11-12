@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ConferenceHeader } from "../components/conference-header";
 import "../conference.css";
-import churchHero from "../assets/church-hero.jpg";
+import { churchHeroStyle } from "../lib/church-hero";
 import { ConferenceFooter } from "../components/conference-footer";
 
 export const Route = createFileRoute("/privacy")({
@@ -36,11 +36,7 @@ function PrivacyPage() {
 
       <main id="main">
         <section className="hero hero-small">
-          <div
-            className="hero-bg"
-            style={{ backgroundImage: `url(${churchHero})` }}
-            aria-hidden="true"
-          />
+          <div className="hero-bg" style={churchHeroStyle} aria-hidden="true" />
           <div className="hero-veil" aria-hidden="true" />
           <div className="container">
             <div className="eyebrow reveal d1">Legal Information</div>
